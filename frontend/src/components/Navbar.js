@@ -5,9 +5,9 @@ import {useState} from 'react';
 
 function Navbar() {
 
+  // navbar menu toggle in mobile
   const [active, setActive] = useState(false);
-  const HandleOnClick = event => {
-    
+  const HandleOnClick = event => { 
     console.log("Handle on click for menu!");
     setActive(!active);
   };
