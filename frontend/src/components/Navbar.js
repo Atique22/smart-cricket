@@ -10,7 +10,7 @@ const Navbar = () => {
          <img className="logo" src={logo} alt="logo.." />
         </a>
         <button
-          className="navbar-toggler"
+          className="navbar-toggler border border-light"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarScroll"
