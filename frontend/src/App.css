@@ -7,10 +7,19 @@ nav a.nav-link{
   letter-spacing: 0.0375rem;
   cursor: pointer;
 }
-
 nav ul li{
   text-transform: uppercase;
 }
 .nav-item a{
-  color: wheat !important;
+  color: whitesmoke !important;
+}
+:root{
+  --pimary-orange: orange;
+  --pimary-green: green;
+}
+.navbar-nav > li > a.active, .navbar-nav > li > a:focus {
+  border-top: 0.1875rem solid var(--pimary-green);
+}
+.navbar-nav > li > a:hover{
+  border-top: 0.1875rem solid var(--pimary-orange);
 }
