@@ -52,7 +52,7 @@ nav ul li{
   font-size: 24px;
 }
 
-#hero .btn-get-started {
+/* #hero .btn-get-started {
   font-family: "Jost", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -92,7 +92,7 @@ nav ul li{
 
 #hero .btn-watch-video:hover i {
   color: #47b2e4;
-}
+} */
 
 #hero .animated {
   animation: up-down 2s ease-in-out infinite alternate-reverse both;
