@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../CRICKET.png"
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-dark">
+    <nav className="navbar navbar-expand-lg fixed-top bg-dark">
       
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
