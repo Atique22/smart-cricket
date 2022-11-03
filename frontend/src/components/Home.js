@@ -6,7 +6,7 @@ import hero from "../hero1.png"
 const Home = () => {
   return (
     // ======= Hero Section ======= //
-    <section id="hero" className="d-flex align-items-center">
+    <section id="hero" className="d-flex align-items-center mt-5">
   
       <div className="container">
         <div className="row">
