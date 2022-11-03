@@ -43,7 +43,7 @@ const Navbar = () => {
               <a href="/" className="nav-link ">Feature</a>
             </li>
           </ul>
-          <a href="/"><button className="btn btn-outline-success"><b>Get Started</b></button></a>
+          <a href="/"><button className="btn btn-outline-light"><b>Get Started</b></button></a>
           
         </div>
       </div>
