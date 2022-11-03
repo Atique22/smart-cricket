@@ -1,5 +1,4 @@
 import React from 'react'
-
 const Profile_team = (props) => {
   return (
     <div className="col-lg-6 mt-4">
@@ -9,11 +8,12 @@ const Profile_team = (props) => {
         <h4>{props.name}</h4>
         <span>{props.title}</span>
         <p>{props.descrip}</p>
-        <div className="social">
-          <a href="/"><i className="ri-twitter-fill"></i></a>
-          <a href="/"><i className="ri-facebook-fill"></i></a>
-          <a href="/"><i className="ri-instagram-fill"></i></a>
-          <a href="/"> <i className="ri-linkedin-box-fill"></i> </a>
+
+        <div className="social">       
+          <a href="/"><i className="bi bi-twitter"></i></a>
+          <a href="/"><i class="bi bi-facebook"></i></a>
+          <a href="/"><i class="bi bi-instagram"></i></a>
+          <a href="/"> <i className="bi bi-linkedin"></i> </a>
         </div>
       </div>
     </div>
