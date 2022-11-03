@@ -11,8 +11,8 @@ const Profile_team = (props) => {
 
         <div className="social">       
           <a href="/"><i className="bi bi-twitter"></i></a>
-          <a href="/"><i class="bi bi-facebook"></i></a>
-          <a href="/"><i class="bi bi-instagram"></i></a>
+          <a href="/"><i className="bi bi-facebook"></i></a>
+          <a href="/"><i className="bi bi-instagram"></i></a>
           <a href="/"> <i className="bi bi-linkedin"></i> </a>
         </div>
       </div>

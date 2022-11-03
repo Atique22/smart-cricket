@@ -22,7 +22,6 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarScroll">
           <ul
             className="navbar-nav m-auto my-2 my-lg-0 navbar-nav-scroll"
-            // style="--bs-scroll-height: 100px;" style={{color: "#fff"}}
           >
             <li className="nav-item">
               <a className="nav-link " aria-current="page" href="/">
@@ -42,6 +41,11 @@ const Navbar = () => {
             <li className="nav-item">
               <a href="/" className="nav-link ">Feature</a>
             </li>
+            
+            <li className="nav-item">
+              <a href="/" className="nav-link ">Team</a>
+            </li>
+            
           </ul>
           <a href="/"><button className="btn btn-outline-light"><b>Get Started</b></button></a>
           
