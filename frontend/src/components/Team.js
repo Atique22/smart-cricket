@@ -12,10 +12,10 @@ const Team = () => {
         </div>
 
         <div className="row">
-            <Profile_team/>
-            <Profile_team/>
-            <Profile_team/>
-            <Profile_team/>
+            <Profile_team   name="Atique Ahmad" title="Web Developer" descrip="here Atique Ahmad description .... "/>
+            <Profile_team  name="Faizan Asghar" title="Web Developer" descrip="here Faizan Asghar description .... "/>
+            <Profile_team name="Mirza Mukkarram" title="Machine Learning" descrip="here Mirza Mukkarram description .... "/>
+            <Profile_team name="Aatir Nadeem" title="Computer Vision" descrip="here Aatir Nadeem description .... "/>
         </div>
 
       </div>
