@@ -1,5 +1,6 @@
 import React from 'react'
-import hero_img from "../hero-img.png"
+// import hero_img from "../hero-img.png"
+import hero from "../hero1.png"
 // import 'react-bootstrap-icons';
 
 const Home = () => {
@@ -18,7 +19,7 @@ const Home = () => {
             </div>
           </div>
           <div className="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-            <img src={hero_img} className="img-fluid animated" alt="hero images"/>
+            <img src={hero} className="img-fluid animated mb-4" alt="hero images"/>
           </div>
         </div>
       </div>
