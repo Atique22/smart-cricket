@@ -1,5 +1,10 @@
 import React from 'react'
 import Profile_team from './Profile_team'
+import team1 from "../assets/img/team/team1.png"
+import team2 from "../assets/img/team/team2.png"
+import team3 from "../assets/img/team/team3.png"
+import team4 from "../assets/img/team/team4.png"
+
 const Team = () => {
   return (
     //  ======= Team Section =======
@@ -12,10 +17,10 @@ const Team = () => {
         </div>
 
         <div className="row">
-            <Profile_team   name="Atique Ahmad" title="Web Developer" descrip="here Atique Ahmad description .... "/>
-            <Profile_team  name="Faizan Asghar" title="Web Developer" descrip="here Faizan Asghar description .... "/>
-            <Profile_team name="Mirza Mukkarram" title="Machine Learning" descrip="here Mirza Mukkarram description .... "/>
-            <Profile_team name="Aatir Nadeem" title="Computer Vision" descrip="here Aatir Nadeem description .... "/>
+            <Profile_team   name="Atique Ahmad" title="Web Developer" descrip="here Atique Ahmad description .... " team1={team1}/>
+            <Profile_team  name="Faizan Asghar" title="Web Developer" descrip="here Faizan Asghar description .... " team1={team2}/>
+            <Profile_team name="Mirza Mukkarram" title="Machine Learning" descrip="here Mirza Mukkarram description .... " team1={team3}/>
+            <Profile_team name="Aatir Nadeem" title="Computer Vision" descrip="here Aatir Nadeem description .... " team1={team4}/>
         </div>
 
       </div>

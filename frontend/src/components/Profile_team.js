@@ -1,11 +1,10 @@
 import React from 'react'
-import team1 from "../assets/img/team/team1.png"
 
 const Profile_team = (props) => {
   return (
     <div className="col-lg-6 mt-4">
     <div className="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
-      <div className="pic"><img src={team1} className="img-fluid" alt=""/></div>
+      <div className="pic"><img src={props.team1} className="img-fluid" alt=""/></div>
       <div className="member-info">
         <h4>{props.name}</h4>
         <span>{props.title}</span>
