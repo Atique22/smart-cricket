@@ -5,12 +5,14 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import Home from "./components/Home";
 import Team from "./components/Team";
 import Footer from "./components/Footer";
+import Contact from "./components/Contact";
 function App() {
   return (
   <>
     <Navbar/>
     <Home/>
     <Team/>
+    <Contact/>
     <Footer/>
   </>
   );

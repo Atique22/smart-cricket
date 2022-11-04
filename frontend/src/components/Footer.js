@@ -58,7 +58,7 @@ const Footer = () => {
           &copy; Copyright <strong><span>Atique</span></strong>. All Rights Reserved
         </div>
         <div className="credits">
-          Designed by <a href="">Atique Ahmad</a>
+          Designed by <a href="/">Atique Ahmad</a>
         </div>
       </div>
 
