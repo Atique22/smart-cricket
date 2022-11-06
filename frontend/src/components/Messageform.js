@@ -2,7 +2,7 @@ import React from 'react'
 
 const Messageform = () => {
   return (
-    <form action=" " method="post" role="form" className="php-email-form">
+    <form action="" method="post" className="my-email-form">
               <div className="row">
                 <div className="form-group col-md-6">
                   <label htmlFor="name">Your Name</label>
@@ -27,7 +27,7 @@ const Messageform = () => {
                 <div className="sent-message">Your message has been sent. Thank you!</div>
               </div>
               <div className="text-center"><button type="submit">Send Message</button></div>
-            </form>
+        </form>
   )
 }
 
