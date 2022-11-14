@@ -17,9 +17,9 @@ const Team = () => {
         </div>
 
         <div className="row">
-            <Profile_team   name="Atique Ahmad" title="Web Developer" descrip="here Atique Ahmad description .... " team1={team1}/>
+            <Profile_team   name="Atique Ahmad" title="Web Developer" descrip="here Atique Ahmad description yutyu .... " team1={team1}/>
             <Profile_team  name="Faizan Asghar" title="Web Developer" descrip="here Faizan Asghar description .... " team1={team2}/>
-            <Profile_team name="Mirza Mukkarram" title="Machine Learning" descrip="here Mirza Mukkarram description .... " team1={team3}/>
+            <Profile_team name="Mirza Mukkarram" title="Machine Learning" descrip="here Mirza Mukkarram description  here.... " team1={team3}/>
             <Profile_team name="Aatir Nadeem" title="Computer Vision" descrip="here Aatir Nadeem description .... " team1={team4}/>
         </div>
 

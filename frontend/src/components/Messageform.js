@@ -26,7 +26,7 @@ const Messageform = () => {
                 <div className="error-message"></div>
                 <div className="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div className="text-center"><button type="submit">Send Message</button></div>
+              <button className="btn btn-outline-success text-center"><b>Send Message</b></button>
         </form>
   )
 }

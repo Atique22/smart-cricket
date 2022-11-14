@@ -351,7 +351,7 @@ nav ul li{
 #footer .footer-top .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #47b2e4;
+  background: #3b3d3d;
   color: #fff;
   line-height: 1;
   padding: 8px 0;
@@ -365,7 +365,7 @@ nav ul li{
 }
 
 #footer .footer-top .social-links a:hover {
-  background: #209dd8;
+  background: #1f2122;
   color: #fff;
   text-decoration: none;
 }
@@ -387,6 +387,10 @@ nav ul li{
 
 #footer .credits a {
   transition: 0.3s;
+  text-decoration: none;
+  font-size: medium;
+  font-weight: lighter;
+  color: whitesmoke;
 }
 
 @media (max-width: 768px) {
@@ -572,19 +576,6 @@ nav ul li{
 
 .contact .my-email-form textarea {
   padding: 10px 12px;
-}
-
-.contact .my-email-form button[type=submit] {
-  background: #011f10;
-  border: 0;
-  padding: 12px 34px;
-  color: #fff;
-  transition: 0.4s;
-  border-radius: 0.5rem;
-}
-
-.contact .my-email-form button[type=submit]:hover {
-  background: #363635;
 }
 
 @-webkit-keyframes animate-loading {
