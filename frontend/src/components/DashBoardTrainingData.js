@@ -5,9 +5,10 @@ import MenuDashBoard from './DashBoardMenu'
 const TrainingDataDashboard = () => {
   return (
     //  ======= Training Data Dash-Board ======= 
-    <div id="contact" className="contact m-9">
-      TrainingDataDashboard is here 
+    <div id="contact" className="">
+      
       <MenuDashBoard/>
+      TrainingDataDashboard is here 
     </div>
 
   )

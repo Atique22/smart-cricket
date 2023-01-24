@@ -1,30 +1,55 @@
-import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Offcanvas from 'react-bootstrap/Offcanvas';
-
+import React from 'react';
+import SideNav, { NavItem, NavText,NavIcon } from '@trendmicro/react-sidenav';
+import '@trendmicro/react-sidenav/dist/react-sidenav.css';
+import {FaHome} from '@react-icons/all-files/fa/FaHome';
+import {AiFillDashboard} from '@react-icons/all-files/ai/AiFillDashboard';
+import {AiFillFolder} from '@react-icons/all-files/ai/AiFillFolder';
 function MenuDashBoard() {
-  const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
-  return (
-    <>
-      <Button variant="primary" onClick={handleShow}>
-        Launch
-      </Button>
-
-      <Offcanvas show={show} onHide={handleClose}>
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
-        </Offcanvas.Header>
-        <Offcanvas.Body>
-          Some text as placeholder. In real life you can have the elements you
-          have chosen. Like, text, images, lists, etc.
-        </Offcanvas.Body>
-      </Offcanvas>
-    </>
-  );
+    return (
+        <>
+            <SideNav
+                onSelect={(selected) => {
+                    // Add your code here
+                    alert("toggle")
+                }}
+                style={{ backgroundColor: '#3b3d3d', width: '100px'}} 
+            >
+                <SideNav.Toggle />
+                <SideNav.Nav defaultSelected="home">
+                    <NavItem eventKey="home">
+                    <NavIcon><FaHome/></NavIcon>
+                        
+                        <NavText>
+                            Go Back to Home
+                        </NavText>
+                    </NavItem>
+                    <NavItem eventKey="home1ß">
+                    <NavIcon><AiFillDashboard/></NavIcon>
+                        <NavText>
+                            Dash Board
+                        </NavText>
+                    </NavItem>
+                    <NavItem eventKey="charts">
+                       <NavIcon><AiFillFolder/></NavIcon>
+                        <NavText>
+                            Charts
+                        </NavText>
+                        <NavItem eventKey="charts/linechart">
+                            <NavText>
+                                Line Chart
+                            </NavText>
+                        </NavItem>
+                        <NavItem eventKey="charts/barchart">
+                            <NavText>
+                                Bar Chart
+                            </NavText>
+                        </NavItem>
+                    </NavItem>
+                </SideNav.Nav>
+            </SideNav>
+        </>
+    );
 }
 
 export default MenuDashBoard;
