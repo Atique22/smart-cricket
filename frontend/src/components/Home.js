@@ -15,7 +15,8 @@ const Home = () => {
             <h1>Better Solutions For Your Cricket Training</h1>
             <h2>We are team of talented designers making websites with differents tools....</h2>
             <div className="d-flex justify-content-center justify-content-lg-start">
-              <Link  to="/dashboard"className="m-3"><button type="button" className="btn btn-primary btn-lg">Get Started</button></Link>
+            <Link  to="/dashboard"className="m-3"><button type="button" className="btn btn-primary btn-lg">Get Started</button></Link>
+            <Link  to="/dashboard"className="m-3"><button type="button" className="btn btn-primary btn-lg">Dashboard</button></Link>
               <Link  to="/register" className="m-3"><button type="button" className="btn btn-outline-secondary btn-lg">Watch Video</button></Link>
             </div>
           </div>

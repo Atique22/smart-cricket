@@ -1,9 +1,10 @@
 import React from 'react';
-import SideNav, { NavItem, NavText,NavIcon } from '@trendmicro/react-sidenav';
+import { Link } from "react-router-dom";
+import SideNav, { NavItem, NavText, NavIcon } from '@trendmicro/react-sidenav';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
-import {FaHome} from '@react-icons/all-files/fa/FaHome';
-import {AiFillDashboard} from '@react-icons/all-files/ai/AiFillDashboard';
-import {AiFillFolder} from '@react-icons/all-files/ai/AiFillFolder';
+import { FaHome } from '@react-icons/all-files/fa/FaHome';
+import { AiFillDashboard } from '@react-icons/all-files/ai/AiFillDashboard';
+import { AiFillFolder } from '@react-icons/all-files/ai/AiFillFolder';
 function MenuDashBoard() {
 
     return (
@@ -11,27 +12,27 @@ function MenuDashBoard() {
             <SideNav
                 onSelect={(selected) => {
                     // Add your code here
-                    alert("toggle")
                 }}
-                style={{ backgroundColor: '#3b3d3d', width: '100px'}} 
+                style={{ backgroundColor: '#3b3d3d', width: '100px' }}
             >
                 <SideNav.Toggle />
                 <SideNav.Nav defaultSelected="home">
                     <NavItem eventKey="home">
-                    <NavIcon><FaHome/></NavIcon>
-                        
+                        <NavIcon><Link to="/"> <FaHome /></Link></NavIcon>
+
                         <NavText>
                             Go Back to Home
                         </NavText>
                     </NavItem>
-                    <NavItem eventKey="home1ß">
-                    <NavIcon><AiFillDashboard/></NavIcon>
+
+                    <NavItem eventKey="dashboard">
+                        <NavIcon><Link to="/dashboard"> <AiFillDashboard /></Link></NavIcon>
                         <NavText>
                             Dash Board
                         </NavText>
                     </NavItem>
                     <NavItem eventKey="charts">
-                       <NavIcon><AiFillFolder/></NavIcon>
+                        <NavIcon><AiFillFolder /></NavIcon>
                         <NavText>
                             Charts
                         </NavText>
