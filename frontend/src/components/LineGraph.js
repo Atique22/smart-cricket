@@ -1,24 +1,20 @@
 import * as React from 'react';
-import { Chart, ChartTitle, ChartSeries, ChartSeriesItem, ChartCategoryAxis, ChartCategoryAxisItem } from '@progress/kendo-react-charts';
-import 'hammerjs';
+import {
+    Chart,
+    ChartSeries,
+    ChartSeriesItem,
+} from "@progress/kendo-react-charts";
+
 
 
 function LineGraph() {
-    const categories = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'];
+    const data = [10, 12, 13, 9, 8, 13];
 
     return (
-        <Chart className='p-3 w-full h-full bg-black'> 
-            <ChartTitle text="Units sold Graph" />
-            <ChartCategoryAxis>
-                <ChartCategoryAxisItem title={{
-                    text: 'Months'
-                }} categories={categories} />
-            </ChartCategoryAxis>
-            <ChartSeries>
-                <ChartSeriesItem type="line" data={[123, 276, 310, 212, 240, 156, 98]} />
-                <ChartSeriesItem type="line" data={[165, 210, 287, 144, 190, 167, 212]} />
-                <ChartSeriesItem type="line" data={[56, 140, 195, 46, 123, 78, 95]} />
-            </ChartSeries>
+        <Chart className='p-3 w-full h-full '>
+                <ChartSeries>
+                    <ChartSeriesItem data={data}  />
+                </ChartSeries>
         </Chart>
     );
 }
