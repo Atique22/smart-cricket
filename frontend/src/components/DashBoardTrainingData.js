@@ -1,14 +1,15 @@
 import React from 'react'
+import Chart from './Chart'
 import MenuDashBoard from './DashBoardMenu'
 
 
 const TrainingDataDashboard = () => {
   return (
     //  ======= Training Data Dash-Board ======= 
-    <div id="contact" className="">
+    <div id="dashboard" className=''>
       
       <MenuDashBoard/>
-      TrainingDataDashboard is here 
+      <Chart/>
     </div>
 
   )
