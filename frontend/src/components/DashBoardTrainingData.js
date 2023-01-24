@@ -10,12 +10,18 @@ const TrainingDataDashboard = () => {
     //  ======= Training Data Dash-Board ======= 
     <div id="dashboard" className='container-flex'>
       <div className='float-left'>
-        <MenuDashBoard/>
+        <MenuDashBoard />
       </div>
-      <div className='d-flex flex-row-reverse'>
-          <Chart/>  
+      <div className='d-flex flex-row-reverse ml-4'>
+        <div className='d-flex flex-row m-5 p-5'>
+          <div className='w-60'>
+            <Chart />
+          </div>
+          <div className='w-60'>
+            <Chart />
+          </div>  
+        </div>
       </div>
-      
 
     </div>
 

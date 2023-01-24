@@ -7,11 +7,9 @@ function Chart() {
     return (
         <>
 
-            <Card className='m-3 p-4 w-full'>
+            <Card className='m-3 p-4'>
                 <Card.Body>
                     <Card.Title>Graph </Card.Title>
-
-                    {/* line graph */}
                         <LineGraph />
                     <Card.Text>
                         Some quick example text to build on the card title and make up the
