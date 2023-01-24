@@ -9,22 +9,11 @@ const TrainingDataDashboard = () => {
   return (
     //  ======= Training Data Dash-Board ======= 
     <div id="dashboard" className='container-flex'>
-      <div className='float-left'>
-        <MenuDashBoard />
+      <MenuDashBoard />
+      <div style={{ marginLeft: "7rem" }} >
+        <Chart />
       </div>
-      <div className='d-flex flex-row-reverse ml-4'>
-        <div className='d-flex flex-row m-5 p-5'>
-          <div className='w-60'>
-            <Chart />
-          </div>
-          <div className='w-60'>
-            <Chart />
-          </div>  
-        </div>
-      </div>
-
     </div>
-
   )
 }
 
