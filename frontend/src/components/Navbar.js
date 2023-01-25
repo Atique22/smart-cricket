@@ -1,13 +1,15 @@
 import React from "react";
 import logo from "../CRICKET.png"
+import {Link } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg fixed-top bg-dark">
       
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">
+        <Link className="navbar-brand" href="/">
          <img className="logo" src={logo} alt="logo.." />
-        </a>
+        </Link>
         <button
           className="navbar-toggler border border-light"
           type="button"
@@ -24,30 +26,30 @@ const Navbar = () => {
             className="navbar-nav m-auto my-2 my-lg-0 navbar-nav-scroll"
           >
             <li className="nav-item">
-              <a className="nav-link " aria-current="page" href="/">
+              <Link className="nav-link " aria-current="page" href="/">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">
+              <Link className="nav-link" href="/">
                 About
-              </a>
+              </Link>
             </li>
             
             <li className="nav-item">
-              <a href="#contact" className="nav-link ">Contact</a>
+              <Link href="#contact" className="nav-link ">Contact</Link>
             </li> 
 
             <li className="nav-item">
-              <a href="/" className="nav-link ">Feature</a>
+              <Link href="/" className="nav-link ">Feature</Link>
             </li>
             
             <li className="nav-item">
-              <a href="#team" className="nav-link ">Team</a>
+              <Link href="#team" className="nav-link ">Team</Link>
             </li>
             
           </ul>
-          <a href="/"><button className="btn btn-outline-light"><b>Get Started</b></button></a>
+          <Link to="/dashboard"><button className="btn btn-outline-light"><b>Get Started</b></button></Link>
           
         </div>
       </div>
