@@ -1,5 +1,5 @@
 import React from 'react'
-import Profile_team from './Profile_team'
+import ProfileTeam from './Profile_team'
 import team1 from "../assets/img/team/team1.png"
 import team2 from "../assets/img/team/team2.png"
 import team3 from "../assets/img/team/team3.png"
@@ -17,10 +17,10 @@ const Team = () => {
         </div>
 
         <div className="row">
-            <Profile_team   name="Atique Ahmad" title="Web Developer" descrip="here Atique Ahmad description yutyu .... " team1={team1}/>
-            <Profile_team  name="Faizan Asghar" title="Web Developer" descrip="here Faizan Asghar description .... " team1={team2}/>
-            <Profile_team name="Mirza Mukkarram" title="Machine Learning" descrip="here Mirza Mukkarram description  here.... " team1={team3}/>
-            <Profile_team name="Aatir Nadeem" title="Computer Vision" descrip="here Aatir Nadeem description .... " team1={team4}/>
+            <ProfileTeam   name="Atique Ahmad" title="Web Developer" description="here Atique Ahmad descriptiontion yutyu .... " team1={team1}/>
+            <ProfileTeam  name="Faizan Asghar" title="Web Developer" description="here Faizan Asghar descriptiontion .... " team1={team2}/>
+            <ProfileTeam name="Mirza Mukkarram" title="Machine Learning" description="here Mirza Mukkarram descriptiontion  here.... " team1={team3}/>
+            <ProfileTeam name="Aatir Nadeem" title="Computer Vision" description="here Aatir Nadeem descriptiontion .... " team1={team4}/>
         </div>
 
       </div>

@@ -16,7 +16,7 @@ function MenuDashBoard() {
                 style={{ backgroundColor: '#3b3d3d', width: '100px' }}
             >
                 <SideNav.Toggle />
-                <SideNav.Nav defaultSelected="home">
+                <SideNav.Nav defaultSelected="dashboard">
                     <NavItem eventKey="home">
                         <NavIcon><Link to="/"> <FaHome /></Link></NavIcon>
 

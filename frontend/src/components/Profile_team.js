@@ -1,5 +1,5 @@
 import React from 'react'
-const Profile_team = (props) => {
+const ProfileTeam = (props) => {
   return (
     <div className="col-lg-6 mt-4">
     <div className="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
@@ -7,7 +7,7 @@ const Profile_team = (props) => {
       <div className="member-info">
         <h4>{props.name}</h4>
         <span>{props.title}</span>
-        <p>{props.descrip}</p>
+        <p>{props.description}</p>
 
         <div className="social">       
           <a href="/"><i className="bi bi-twitter"></i></a>
@@ -21,4 +21,4 @@ const Profile_team = (props) => {
   )
 }
 
-export default Profile_team
+export default ProfileTeam
