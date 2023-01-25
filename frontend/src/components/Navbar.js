@@ -7,9 +7,9 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg fixed-top bg-dark">
       
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">
+        <Link className="navbar-brand" to="/">
          <img className="logo" src={logo} alt="logo.." />
-        </a>
+        </Link>
         <button
           className="navbar-toggler border border-light"
           type="button"
@@ -26,9 +26,9 @@ const Navbar = () => {
             className="navbar-nav m-auto my-2 my-lg-0 navbar-nav-scroll"
           >
             <li className="nav-item">
-              <a className="nav-link " aria-current="page" href="/">
+              <Link className="nav-link " aria-current="page" to="/">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#team">
@@ -41,7 +41,7 @@ const Navbar = () => {
             </li> 
 
             <li className="nav-item">
-              <a href="/" className="nav-link ">Feature</a>
+              <Link to="/" className="nav-link ">Feature</Link>
             </li>
             
             <li className="nav-item">
