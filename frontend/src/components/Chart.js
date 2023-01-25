@@ -7,7 +7,7 @@ function Chart(props) {
     return (
         <>
 
-            <Card className='m-3 '>
+            <Card className='m-2 '>
                 <Card.Body>
                     <Card.Title>Graph {props.title}</Card.Title>
                         <LineGraph />
