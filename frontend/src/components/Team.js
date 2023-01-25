@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useRef,useEffect} from 'react'
 import ProfileTeam from './Profile_team'
 import team1 from "../assets/img/team/team1.png"
 import team2 from "../assets/img/team/team2.png"
@@ -6,9 +6,15 @@ import team3 from "../assets/img/team/team3.png"
 import team4 from "../assets/img/team/team4.png"
 
 const Team = () => {
+  const myRef = useRef(null);
+
+  useEffect(() => {
+    console.log(myRef.current); // Access the element with ID "my-id"
+  }, []);
+
   return (
     //  ======= Team Section =======
-    <section id="team" className="team section-bg mt-4">
+    <section id="team" ref={myRef} className="team section-bg mt-4">
       <div className="container" data-aos="fade-up">
 
         <div className="section-title">
