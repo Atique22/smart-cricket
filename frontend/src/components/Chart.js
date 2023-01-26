@@ -7,7 +7,7 @@ function Chart(props) {
     return (
         <>
 
-            <Card className='m-2 '>
+            <Card className='m-2 col-sm-5'>
                 <Card.Body>
                     <Card.Title>Graph {props.title}</Card.Title>
                       {props.component}
