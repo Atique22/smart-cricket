@@ -13,7 +13,7 @@ function MenuDashBoard() {
                 // onSelect={(selected) => {
                 //     // Add your code here
                 // }}
-                style={{ backgroundColor: '#3b3d3d', width: '100px' }}
+                style={{ backgroundColor: '#3b3d3d', width: '100px', position: 'fixed'}}
             >
                 <SideNav.Toggle />
                 <SideNav.Nav defaultSelected="dashboard" >
