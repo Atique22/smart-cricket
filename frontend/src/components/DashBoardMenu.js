@@ -10,13 +10,13 @@ function MenuDashBoard() {
     return (
         <>
             <SideNav
-                onSelect={(selected) => {
-                    // Add your code here
-                }}
+                // onSelect={(selected) => {
+                //     // Add your code here
+                // }}
                 style={{ backgroundColor: '#3b3d3d', width: '100px' }}
             >
                 <SideNav.Toggle />
-                <SideNav.Nav defaultSelected="dashboard">
+                <SideNav.Nav defaultSelected="dashboard" >
                     <NavItem eventKey="home">
                         <NavIcon><Link to="/"> <FaHome /></Link></NavIcon>
 
