@@ -23,13 +23,20 @@ function MenuDashBoard() {
                         <NavText>
                             Go Back to Home
                         </NavText>
+
+                        <NavItem>
+                            
+                        </NavItem>
                     </NavItem>
 
                     <NavItem eventKey="dashboard">
                         <NavIcon><Link to="/dashboard"> <AiFillDashboard /></Link></NavIcon>
                         <NavText>
-                            Dash Board
+                            DashBoard
                         </NavText>
+                        <NavItem>
+
+                        </NavItem>
                     </NavItem>
                     <NavItem eventKey="charts">
                         <NavIcon><AiFillFolder /></NavIcon>
@@ -37,14 +44,14 @@ function MenuDashBoard() {
                             Charts
                         </NavText>
                         <NavItem eventKey="charts/linechart">
-                            <NavText>
+                            {/* <NavText>
                                 Line Chart
-                            </NavText>
+                            </NavText> */}
                         </NavItem>
                         <NavItem eventKey="charts/barchart">
-                            <NavText>
+                            {/* <NavText>
                                 Bar Chart
-                            </NavText>
+                            </NavText> */}
                         </NavItem>
                     </NavItem>
                 </SideNav.Nav>
