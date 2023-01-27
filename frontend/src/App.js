@@ -7,7 +7,7 @@ import Team from "./components/Team";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
 import TrainingDataDashboard from "./components/DashBoardTrainingData"
-
+import FileDataDisplay from "./components/FileDataDisplay"
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -15,10 +15,11 @@ function App() {
     <>
 
      
-      <BrowserRouter>
+      <BrowserRouter> FileDataDisplay
         <Routes>
           <Route exact path="/" element={ <> <Navbar /><Home /> <Team /><Contact /><Footer />  </>} />
           <Route path="/dashboard" element={<TrainingDataDashboard />} />
+          <Route path="/FileDataDisplay" element={<FileDataDisplay/>} />
         </Routes>
       </BrowserRouter>
       {/* <TrainingDataDashboard /> */}

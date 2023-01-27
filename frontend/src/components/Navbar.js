@@ -41,7 +41,7 @@ const Navbar = () => {
             </li> 
 
             <li className="nav-item">
-              <Link to="/" className="nav-link ">Feature</Link>
+              <Link to="/FileDataDisplay" className="nav-link ">File Data Display</Link>
             </li>
             
             <li className="nav-item">
