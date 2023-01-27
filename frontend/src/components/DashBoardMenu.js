@@ -18,19 +18,16 @@ function MenuDashBoard() {
                 <SideNav.Toggle />
                 <SideNav.Nav defaultSelected="dashboard" >
                     <NavItem eventKey="home">
-                        <NavIcon><Link to="/"> <FaHome /></Link></NavIcon>
+                        <NavIcon ><Link to="/"> <FaHome size="27" /></Link></NavIcon>
 
                         <NavText>
                             Go Back to Home
                         </NavText>
-
-                        <NavItem>
-                            
-                        </NavItem>
+                        <NavItem> </NavItem>
                     </NavItem>
 
                     <NavItem eventKey="dashboard">
-                        <NavIcon><Link to="/dashboard"> <AiFillDashboard /></Link></NavIcon>
+                        <NavIcon><Link to="/dashboard"> <AiFillDashboard size="27"/></Link></NavIcon>
                         <NavText>
                             DashBoard
                         </NavText>
@@ -39,7 +36,7 @@ function MenuDashBoard() {
                         </NavItem>
                     </NavItem>
                     <NavItem eventKey="charts">
-                        <NavIcon><AiFillFolder /></NavIcon>
+                        <NavIcon><AiFillFolder size="27"/></NavIcon>
                         <NavText>
                             Charts
                         </NavText>
