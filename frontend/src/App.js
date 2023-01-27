@@ -15,7 +15,7 @@ function App() {
     <>
 
      
-      <BrowserRouter> FileDataDisplay
+      <BrowserRouter> 
         <Routes>
           <Route exact path="/" element={ <> <Navbar /><Home /> <Team /><Contact /><Footer />  </>} />
           <Route path="/dashboard" element={<TrainingDataDashboard />} />
