@@ -1,6 +1,7 @@
 import React from 'react'
 import Chart from './Chart'
 import MenuDashBoard from './DashBoardMenu'
+import FileDataDisplay from './FileDataDisplay'
 import LineGraph from './LineGraph'
 
 const TrainingDataDashboard = () => {
@@ -17,6 +18,10 @@ const TrainingDataDashboard = () => {
         <Chart title="Line graph."  component={  <LineGraph />  } description="chart is usually used as a catchall term for the graphical representation of data. Graph refers to a chart that specifically plots data along two dimensions... " />
         <Chart title="Area graph."  component={  <LineGraph />  } description="chart is usually used as a catchall term for the graphical representation of data. Graph refers to a chart that specifically plots data along two dimensions... " />
       </div>
+      <div className='border  d-flex justify-content-center m-5'>
+          <FileDataDisplay/>
+      </div>
+      
     </div>
   )
 }
