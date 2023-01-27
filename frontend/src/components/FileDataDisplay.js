@@ -51,9 +51,9 @@ export default function FileDataDisplay() {
         <>
             <div className='col-8'>
                 <input className="p-5 " accept='.csv' id="csvFile" onChange={handleOnChange} type="file" />
-                <button type="button" className="btn btn-outline-success" onClick={(data) => { handleOnSubmit(data); }}>Submit</button>
+                <button type="button" className="btn btn-outline-success " onClick={(data) => { handleOnSubmit(data); }}>Submit</button>
             </div>
-            <table className="table table-bordered m-4">
+            <table className="table table-bordered p-0">
                 <thead>
                     <tr key={"header"}>
                         {headerKeys.map((key) => (
