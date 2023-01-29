@@ -597,3 +597,7 @@ nav ul li{
     transform: rotate(360deg);
   }
 }
+/***************************graph css******************/
+text.highcharts-credits {
+    display: none;
+}
