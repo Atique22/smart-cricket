@@ -13,8 +13,8 @@ function Chart(props) {
                       {props.component}
                     <Card.Text>{props.description}
                     </Card.Text>
-                    <Button variant="primary m-2">Upload</Button>
-                    <Button variant="primary  m-2">Upload</Button>
+                    <Button variant="primary m-2">Pie Chart</Button>
+                    <Button variant="primary  m-2">Line Chart</Button>
                 </Card.Body>
             </Card>
         </>
