@@ -6,8 +6,8 @@ import Home from "./components/Home";
 import Team from "./components/Team";
 import Footer from "./components/Footer";
 // import Contact from "./components/Contact";
-import TrainingDataDashboard from "./components/DashBoardTrainingData"
-import FileDataDisplay from "./components/FileDataDisplay"
+import TrainingDataDashboard from "./components/Dashboard/DashBoardTrainingData"
+import FileDataDisplay from "./components/UploadFiles/FileDataDisplay"
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
