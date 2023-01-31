@@ -59,7 +59,7 @@ function DisplayCard({ fileData, source }) {
                 </Card.Body>
 
                 <div style={{ display: showFrame ? "block" : "none" }} >
-                    <canvas ref={canvasRef} width={1100} height={800} />
+                    <canvas ref={canvasRef}/>
                     <ul>
                         Description here:
                         {comments.filter(({ timestamp }) => timestamp === currentTime)
