@@ -92,10 +92,10 @@ function DisplayCard({ fileData, source }) {
                                     value={frameStatus}
                                     onChange={(event) => setFrameStatus(event.target.value)}
                                 >
-                                    <option value="">Select a status</option>
-                                    <option value="good">Good</option>
-                                    <option value="bad">Bad</option>
-                                    <option value="neutral">Neutral</option>
+                                    <option value="">Select a status of ball</option>
+                                    <option value="Middle">Middle</option>
+                                    <option value="Edge">Edge</option>
+                                    <option value="Missed">Missed</option>
                                 </select>
                             </div>
                             <div className="col">
