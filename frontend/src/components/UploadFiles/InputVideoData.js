@@ -13,32 +13,31 @@ function InputVideoData() {
     const [fileData, setFileData] = useState({
         fileName: 'File Name Here',
         fileDate: 'File Date Here',
-        dataFile: "https://youtu.be/4HV7jkpkF2U"
+        dataFile: source
     });
 
 
 
     const handleChange = (event) => {
-
         setFileData({ ...fileData, [event.target.name]: event.target.value });
     };
     const handleFileChange = (event) => {
         const file = event.target.files[0];
         const url = URL.createObjectURL(file);
+        handleChange(event);
+        console.log(fileData);
         setSource(url);
     };
 
     const handleSubmit = (event) => {
         setShowInput(true);
         event.preventDefault();
-        // fileData.dataFile = URL.createObjectURL(fileData.dataFile)
         console.log(fileData);
-        // You can submit the form data to the server using APIs or any other means.
         setShow(false);
     };
 
     return (
-        <>{!source && (showInput === false) ?
+        <>{((!source )&& (showInput === false)) ?
             (<>
                 <div className='row h-100 m-5'>
                     <div className="h-100 d-flex align-items-center justify-content-center">
@@ -81,6 +80,7 @@ function InputVideoData() {
                                 <Form.Control
                                     type="file"
                                     name='dataFile'
+                                    placeholder={source}
                                     onChange={handleChange && handleFileChange}
                                     autoFocus
                                 />
