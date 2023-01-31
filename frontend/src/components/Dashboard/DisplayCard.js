@@ -29,7 +29,7 @@ function DisplayCard({ fileData, source }) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        setComments([...comments, { timestamp: selectedFrame, text: newComment, status: frameStatus }]);
+        setComments([...comments, { timestamp: currentTime, text: newComment, status: frameStatus }]);
         setNewComment("");
         console.log("comment here is with time:"+comments+" time: "+currentTime)
         console.log("frameStatus here is with time:"+frameStatus+" time: "+currentTime)
@@ -63,8 +63,8 @@ function DisplayCard({ fileData, source }) {
                     <ul>
                         Description here:
                         {comments.filter(({ timestamp }) => timestamp === currentTime)
-                            .map(({ text, status }, index) => (
-                                <li key={index}> Comment: {text} Status:({status})</li>
+                            .map(({ text, status, selectedFrame }, index) => (
+                                <li key={index}> time: {currentTime} Comment: {text} Frame: {selectedFrame} Status:({status})</li>
                             ))}
                     </ul>
                     <form onSubmit={handleSubmit}>
