@@ -9,13 +9,13 @@ function InputVideoData() {
     const [fileData, setFileData] = useState({
         fileName: 'File Name Here',
         fileDate: 'File Date Here',
-        dataFile:  "https://youtu.be/4HV7jkpkF2U"
+        dataFile: "https://youtu.be/4HV7jkpkF2U"
     });
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
     const handleChange = (event) => {
-        
+
         setFileData({ ...fileData, [event.target.name]: event.target.value });
     };
 
@@ -30,9 +30,22 @@ function InputVideoData() {
 
     return (
         <>
-            <Button variant="primary" onClick={handleShow}>
-                Upload Source
-            </Button>
+
+            <div class="wrapper">
+                <button className='btn btn-outline-light border-0' onClick={handleShow}>
+                    <div class="container-file">
+                        <h1>Upload a file</h1>
+                        <div class="upload-container">
+                            <div class="border-container">
+                                <p>Click here, upload file from
+                                    <b> browse</b> your computer.</p>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+
+            </div>
+            
             {show ? (<>
 
                 <Modal show={show} onHide={handleClose}>
