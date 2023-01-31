@@ -11,13 +11,13 @@ const TrainingDataDashboard = () => {
 
 
   return (
-    //  ======= Training Data Dash-Board ======= 
-    <div id="dashboard" className='container'>
+    //  ======= Training Data Dash-Board ======= div id="dashboard" className='container'
+    <>
        <MenuDashBoard/>
-       <div className=' align-items-center justify-content-center'>
+       <div className=' align-items-center justify-content-center '>
           <InputVideoData/>
        </div> 
-    </div>
+    </>
   )
 }
 

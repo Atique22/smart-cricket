@@ -1,26 +1,28 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-function DisplayCard({fileData}) {
-   
+function DisplayCard({ fileData, source }) {
+
     return (
         <>
-
-            <Card className='m-2 col-sm-10'>
+            <Card className='m-2 p-1 col-10 position-absolute top-10 end-0'>
                 <Card.Body>
-                    <Card.Title>Title: {fileData?.fileName}, Date: {fileData?.fileDate}</Card.Title>
-                    {/* <video src= {fileData?.dataFile} controls width="100%">
-                        date: {fileData?.fileDate}
-                    </video> */}
-                     <video src= "https://www.youtube.com/embed/d15DP5zqnYE"  type="video/mp4" controls width="100%">
-                        date: {fileData?.fileDate}
+                    <div className="card-header">
+                        Title: {fileData?.fileName}
+                    </div>
+                    <Card.Title>
+
+                    </Card.Title>
+                    <video src={source} type="video/mp4" controls width="100%">
+                        file: {source}
                     </video>
-                    {/* {props.component} */}
-                    <Card.Text>{fileData?.dataFile}
+                    <Card.Text>
+                        file link : {source}
                     </Card.Text>
-                    <Button variant="primary m-2">Pie Chart</Button>
-                    <Button variant="primary  m-2">Line Chart</Button>
+                    <div className="card-footer text-muted">
+                        Date: {fileData?.fileDate}
+                    </div>
                 </Card.Body>
             </Card>
         </>
