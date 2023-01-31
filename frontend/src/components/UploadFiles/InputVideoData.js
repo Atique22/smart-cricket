@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import { Link } from 'react-router-dom';
 import DisplayCard from '../Dashboard/DisplayCard';
+import Team from '../Team'
 
 function InputVideoData() {
     const [show, setShow] = useState(false);
@@ -54,7 +55,7 @@ function InputVideoData() {
                             <div className="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
                                 <div className='row h-100 m-5'>
                                     <div className="h-100 d-flex align-items-center justify-content-center">
-                                        <button className='btn btn-outline-light border-0' onClick={handleShow}>
+                                        <button className='btn btn-outline-dark border-0' onClick={handleShow}>
                                             <div className="container-file">
                                                 <h1>Upload a file</h1>
                                                 <div className="upload-container">
@@ -72,6 +73,7 @@ function InputVideoData() {
                     </div>
 
                 </section>
+                <Team/>
 
                 <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
