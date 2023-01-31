@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
+import { Link } from 'react-router-dom';
 import DisplayCard from '../Dashboard/DisplayCard';
 
 function InputVideoData() {
@@ -37,23 +38,41 @@ function InputVideoData() {
     };
 
     return (
-        <>{((!source )&& (showInput === false)) ?
+        <>{((!source) && (showInput === false)) ?
             (<>
-                <div className='row h-100 m-5'>
-                    <div className="h-100 d-flex align-items-center justify-content-center">
-                        <button className='btn btn-outline-light border-0' onClick={handleShow}>
-                            <div className="container-file">
-                                <h1>Upload a file</h1>
-                                <div className="upload-container">
-                                    <div className="border-container">
-                                        <p>Click here, upload file from
-                                            <b> browse</b> your computer.</p>
+                <section id="hero" className="d-flex align-items-center">
+
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+                                <h1>Better Solutions For Your Cricket Training</h1>
+                                <h2>We are team of talented designers making websites with differents tools....</h2>
+                                <div className="d-flex justify-content-center justify-content-lg-start">
+                                    <Link to="" className="m-3"><button type="button" className="btn btn-outline-secondary btn-lg">Watch Video</button></Link>
+                                </div>
+                            </div>
+                            <div className="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+                                <div className='row h-100 m-5'>
+                                    <div className="h-100 d-flex align-items-center justify-content-center">
+                                        <button className='btn btn-outline-light border-0' onClick={handleShow}>
+                                            <div className="container-file">
+                                                <h1>Upload a file</h1>
+                                                <div className="upload-container">
+                                                    <div className="border-container">
+                                                        <p>Click here, upload file from
+                                                            <b> browse</b> your computer.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
-                        </button>
+                        </div>
                     </div>
-                </div>
+
+                </section>
+
                 <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
                         <Modal.Title>Upload Source Data Here</Modal.Title>
@@ -97,7 +116,7 @@ function InputVideoData() {
                         </Button>
                     </Modal.Footer>
                 </Modal></>) : (
-                <DisplayCard fileData={fileData}  source={source}/>
+                <DisplayCard fileData={fileData} source={source} />
             )}
 
         </>
