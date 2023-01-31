@@ -14,7 +14,9 @@ const TrainingDataDashboard = () => {
     //  ======= Training Data Dash-Board ======= 
     <div id="dashboard" className='container'>
        <MenuDashBoard/>
-       <InputVideoData/>
+       <div className=' align-items-center justify-content-center'>
+          <InputVideoData/>
+       </div> 
     </div>
   )
 }

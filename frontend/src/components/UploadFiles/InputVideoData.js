@@ -6,6 +6,7 @@ import DisplayCard from '../Dashboard/DisplayCard';
 
 function InputVideoData() {
     const [show, setShow] = useState(false);
+    const [showInput, setShowInput] = useState(true);
     const [fileData, setFileData] = useState({
         fileName: 'File Name Here',
         fileDate: 'File Date Here',
@@ -20,7 +21,7 @@ function InputVideoData() {
     };
 
     const handleSubmit = (event) => {
-
+        setShowInput(false);
         event.preventDefault();
         // fileData.dataFile = URL.createObjectURL(fileData.dataFile)
         console.log(fileData);
@@ -31,19 +32,18 @@ function InputVideoData() {
     return (
         <>
 
-            <div class="wrapper">
+            <div style={{ display: showInput ? "none" : "block" }} className=" h-100 d-flex align-items-center justify-content-center">
                 <button className='btn btn-outline-light border-0' onClick={handleShow}>
-                    <div class="container-file">
+                    <div className="container-file">
                         <h1>Upload a file</h1>
-                        <div class="upload-container">
-                            <div class="border-container">
+                        <div className="upload-container">
+                            <div className="border-container">
                                 <p>Click here, upload file from
                                     <b> browse</b> your computer.</p>
                             </div>
                         </div>
                     </div>
                 </button>
-
             </div>
             
             {show ? (<>
