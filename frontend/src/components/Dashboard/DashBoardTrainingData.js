@@ -9,7 +9,6 @@ const TrainingDataDashboard = () => {
     //  ======= Training Data Dash-Board ======= 
     <>
       <MenuDashBoard />
-      
       <div className=' align-items-center justify-content-center '>
         <InputVideoData />
       </div>

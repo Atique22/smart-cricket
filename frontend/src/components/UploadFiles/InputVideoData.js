@@ -118,7 +118,7 @@ function InputVideoData() {
                         </Button>
                     </Modal.Footer>
                 </Modal></>) : (
-                <DisplayCard fileData={fileData} source={source} />
+                <DisplayCard fileData={fileData} source={source}  setShowInput={setShowInput}/>
             )}
 
         </>
