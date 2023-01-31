@@ -4,13 +4,15 @@ import Card from 'react-bootstrap/Card';
 // import InputVideoData from '../UploadFiles/InputVideoData';
 
 function DisplayCard({ fileData, source }) {
+    const [showFrame, setShowFrame] = useState(false);
     const videoRef = useRef(null);
     const canvasRef = useRef(null);
     const [currentTime, setCurrentTime] = useState(0);
     const [comments, setComments] = useState([]);
     const [newComment, setNewComment] = useState("");
+    const [selectedFrame, setSelectedFrame] = useState(0);
+    const [frameStatus, setFrameStatus] = useState("");
 
-    const [showFrame,setShowFrame] = useState(false);
     useEffect(() => {
         const video = videoRef.current;
         const canvas = canvasRef.current;
@@ -27,10 +29,12 @@ function DisplayCard({ fileData, source }) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        setComments([...comments, { timestamp: currentTime, text: newComment }]);
+        setComments([...comments, { timestamp: selectedFrame, text: newComment, status: frameStatus }]);
         setNewComment("");
+        console.log("comment here is with time:"+comments+" time: "+currentTime)
+        console.log("frameStatus here is with time:"+frameStatus+" time: "+currentTime)
+        console.log("selectedFrame here is with time:"+selectedFrame+" time: "+currentTime)
     };
-
     return (
         <>
             <Card className='m-4 p-1 col-10 position-absolute top-10 end-0'>
@@ -50,25 +54,54 @@ function DisplayCard({ fileData, source }) {
                     </Card.Text>
                     <div className="card-footer text-muted">
                         Date: {fileData?.fileDate}
-                        <button type="button" class="btn m-2 btn-outline-secondary" onClick={() => setShowFrame(s => !s)}>Show Frame</button>
+                        <button type="button" className="btn m-2 btn-outline-secondary" onClick={() => setShowFrame(s => !s)}>Show Frame</button>
                     </div>
                 </Card.Body>
 
-                <div style={{display: showFrame ? "block" : "none"}} >
+                <div style={{ display: showFrame ? "block" : "none" }} >
                     <canvas ref={canvasRef} width={1100} height={800} />
                     <ul>
+                        Description here:
                         {comments.filter(({ timestamp }) => timestamp === currentTime)
-                            .map(({ text }, index) => (
-                                <li key={index}>{text}</li>
+                            .map(({ text, status }, index) => (
+                                <li key={index}> Comment: {text} Status:({status})</li>
                             ))}
                     </ul>
                     <form onSubmit={handleSubmit}>
-                        <input
-                            type="text"
-                            value={newComment}
-                            onChange={(event) => setNewComment(event.target.value)}
-                        />
-                        <button type="submit">Add Comment</button>
+                        <div className="row">
+                            <div className="col">
+                                <input
+                                    className="form-control" placeholder="Comment here"
+                                    type="text"
+                                    value={newComment}
+                                    onChange={(event) => setNewComment(event.target.value)}
+                                />
+                            </div>
+                            <div className="col">
+                                <select className="form-control"
+                                    value={selectedFrame}
+                                    onChange={(event) => setSelectedFrame(event.target.value)}
+                                >
+                                    <option value={0}>Frame 0</option>
+                                    <option value={1}>Frame 1</option>
+                                    <option value={2}>Frame 2</option>
+                                </select>
+                            </div>
+                            <div className="col">
+                                <select className="form-control"
+                                    value={frameStatus}
+                                    onChange={(event) => setFrameStatus(event.target.value)}
+                                >
+                                    <option value="">Select a status</option>
+                                    <option value="good">Good</option>
+                                    <option value="bad">Bad</option>
+                                    <option value="neutral">Neutral</option>
+                                </select>
+                            </div>
+                            <div className="col">
+                                <button className='btn btn-outline-secondary' type="submit">Submit</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </Card>
