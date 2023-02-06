@@ -7,6 +7,7 @@ export default function BackendViewData() {
     const [trainingData, setTrainingData] = useState([]);
     useEffect(() => {
         async function getAllTrainingData() {
+           
             try {
                 const dataGet = await axios.get("http://127.0.0.1:8000/training/");
                 // console.log("student data is: " + students.data);
@@ -29,7 +30,7 @@ export default function BackendViewData() {
                                 <th scope="col">Frame</th>
                                 <th scope="col">Article Name</th>
                                 <th scope="col">comments</th>
-                                <th scope="col">Words</th>
+                                <th scope="col">Date</th>
                                 <th scope="col">Shares</th>
                                 <th scope="col"></th>
                                 <th scope="col"></th>
