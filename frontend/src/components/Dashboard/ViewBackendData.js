@@ -1,7 +1,22 @@
 import React from 'react';
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 export default function BackendViewData() {
 
+    const [trainingData, setTrainingData] = useState([]);
+    useEffect(() => {
+        async function getAllTrainingData() {
+            try {
+                const dataGet = await axios.get("http://127.0.0.1:8000/training/");
+                // console.log("student data is: " + students.data);
+                setTrainingData(dataGet.data);
+            } catch (error) {
+                console.log("errors occurs: " + error);
+            }
+        }
+        getAllTrainingData();
+    }, [])
     return (
 
         <div className="container">
@@ -22,33 +37,22 @@ export default function BackendViewData() {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td className="w-25">
-                                    <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/sheep-3.jpg" className="img-fluid img-thumbnail" alt="Sheep" />
-                                </td>
-                                <td>Bootstrap 4 CDN and Starter Template</td>
-                                <td>Cristina</td>
-                                <td>913</td>
-                                <td>2.846</td>
-                                <td>Edit</td>
-                                <td>Delete</td>
-                                <td>View</td>
-                                
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td className="w-25">
-                                    <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/sheep-5.jpg" className="img-fluid img-thumbnail" alt="Sheep" />
-                                </td>
-                                <td>Bootstrap Grid 4 Tutorial and Examples</td>
-                                <td>Cristina</td>
-                                <td>1.434</td>
-                                <td>3.417</td>
-                                <td>Edit</td>
-                                <td>Delete</td>
-                                <td>View</td>
-                            </tr>
+                            {trainingData.map((trainingData, index) => {
+                                return (
+                                    <tr key={index}>
+                                        <th scope="row">{trainingData.id}</th>
+                                        <td className="w-25">
+                                            <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/sheep-3.jpg" className="img-fluid img-thumbnail" alt="Sheep" />
+                                        </td>
+                                        <td>Bootstrap 4 CDN and Starter Template</td>
+                                        <td>{trainingData.Name}</td>
+                                        <td>{trainingData.Date}</td>
+                                        <td>2.846</td>
+                                        <td>Edit</td>
+                                        <td>Delete</td>
+                                        <td>View</td>
+                                    </tr>)
+                            })}
                         </tbody>
                     </table>
                 </div>
