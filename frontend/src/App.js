@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 // import Contact from "./components/Contact";
 import TrainingDataDashboard from "./components/Dashboard/DashBoardTrainingData"
 import FileDataDisplay from "./components/UploadFiles/FileDataDisplay"
+import BackendViewData from "./components/Dashboard/ViewBackendData";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route exact path="/" element={ <> <Navbar /><Home /> <Team /><Footer />  </>} />
           <Route path="/dashboard" element={<TrainingDataDashboard />} />
           <Route path="/FileDataDisplay" element={<FileDataDisplay/>} />
+          <Route path="/BackendViewData" element={<BackendViewData/>} />
         </Routes>
       </BrowserRouter>
       {/* <TrainingDataDashboard /> */}

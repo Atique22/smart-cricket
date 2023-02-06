@@ -36,9 +36,9 @@ function MenuDashBoard() {
                         </NavItem>
                     </NavItem>
                     <NavItem eventKey="charts">
-                        <NavIcon><AiFillFolder size="27"/></NavIcon>
+                        <NavIcon><Link to="/BackendViewData"><AiFillFolder size="27"/></Link></NavIcon>
                         <NavText>
-                            Charts
+                            BackendViewData
                         </NavText>
                         <NavItem eventKey="charts/linechart">
                             {/* <NavText>
