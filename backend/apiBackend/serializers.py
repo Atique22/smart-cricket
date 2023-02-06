@@ -4,4 +4,5 @@ from .models import TrainingData
 class TrainingDataSerializer(serializers.ModelSerializer):
     class Meta:
         model = TrainingData
-        field = ['id', 'Name', 'Date']
+        fields = '__all__'
+        # field = ['id', 'Name', 'Date']
