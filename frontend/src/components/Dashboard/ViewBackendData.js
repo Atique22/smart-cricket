@@ -36,7 +36,7 @@ export default function BackendViewData() {
       <div className="row">
         <div className="col-12">
           {isOpen ? (
-            <div className="modal-overlay">
+            <div className="modal-overlay m-4">
               <div className="modal-content">
                 <button onClick={handleClose}>Close</button>
                 <img
