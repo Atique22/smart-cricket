@@ -26,7 +26,7 @@ class TrainingList(ListAPIView):
             # trainingDataMissed=  body.get('Missed')
 
             trainingDataName =  request.POST.get('Name')
-            trainingDataFrame =  request.POST.get('Frame')
+            trainingDataFrame =  request.FILES.get('Frame')
             trainingDataComment =  request.POST.get('Comment')
             trainingDataMiddle =  request.POST.get('Middle')
             trainingDataEdge =  request.POST.get('Edge')
