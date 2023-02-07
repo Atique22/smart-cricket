@@ -4,4 +4,5 @@ from django.contrib import admin
 from .models import TrainingData
 @admin.register(TrainingData)
 class TrainingDataAdmin(admin.ModelAdmin):
-    list_display = ['id', 'Name', 'Date']
+    list_display = ['id', 'Name', 'Date', 'Frame', 'Comment', 'Middle', 'Edge', 'Missed']   
+    # list_display = ['id', 'Name', 'Date', 'Comment', 'Middle', 'Edge', 'Missed']

@@ -28,10 +28,13 @@ export default function BackendViewData() {
                             <tr>
                                 <th scope="col">ID</th>
                                 <th scope="col">Frame</th>
-                                <th scope="col">Article Name</th>
-                                <th scope="col">comments</th>
                                 <th scope="col">Date</th>
-                                <th scope="col">Shares</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">comments</th>
+
+                                <th scope="col">Middle</th>
+                                <th scope="col">Edge</th>
+                                <th scope="col">Missed</th>
                                 <th scope="col"></th>
                                 <th scope="col"></th>
                                 <th scope="col"></th>
@@ -43,12 +46,14 @@ export default function BackendViewData() {
                                     <tr key={index}>
                                         <th scope="row">{trainingData.id}</th>
                                         <td className="w-25">
-                                            <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/sheep-3.jpg" className="img-fluid img-thumbnail" alt="Sheep" />
+                                            <img src='{trainingData.Frame}' className="img-fluid img-thumbnail" alt="Frame AI" />
                                         </td>
-                                        <td>Bootstrap 4 CDN and Starter Template</td>
-                                        <td>{trainingData.Name}</td>
                                         <td>{trainingData.Date}</td>
-                                        <td>2.846</td>
+                                        <td>{trainingData.Name}</td>
+                                        <td>{trainingData.Comment}</td>
+                                        <td>{trainingData.Middle}</td>
+                                        <td>{trainingData.Edge}</td>
+                                        <td>{trainingData.Missed}</td>
                                         <td>Edit</td>
                                         <td>Delete</td>
                                         <td>View</td>
