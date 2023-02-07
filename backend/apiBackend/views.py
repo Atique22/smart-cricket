@@ -6,6 +6,8 @@ from .models import TrainingData
 from rest_framework.generics import ListAPIView
 import json
 from django.http import JsonResponse
+from django.http import HttpResponse
+
 
 class TrainingList(ListAPIView):
     queryset = TrainingData.objects.all()

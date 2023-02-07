@@ -46,7 +46,7 @@ export default function BackendViewData() {
                                     <tr key={index}>
                                         <th scope="row">{trainingData.id}</th>
                                         <td className="w-25">
-                                            <img src='{trainingData.Frame}' className="img-fluid img-thumbnail" alt="Frame AI" />
+                                            <img src={trainingData.Frame} className="img-fluid img-thumbnail" alt="Frame AI" />
                                         </td>
                                         <td>{trainingData.Date}</td>
                                         <td>{trainingData.Name}</td>
