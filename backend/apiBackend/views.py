@@ -15,14 +15,26 @@ class TrainingList(ListAPIView):
 
     def post(self, request):
         if request.method == 'POST':
-            body = json.loads(request.body.decode('utf-8'))
-            print(body.get('Name'))
-            print(body.get('Date'))
-            trainingDataName =  body.get('Name')
+            # body = json.loads(request.body.decode('utf-8'))
+            # print(body.get('Name'))
+            # print(body.get('Date'))
+            # trainingDataName =  body.get('Name')
+            # trainingDataFrame =  body.get('Frame')
+            # trainingDataComment =  body.get('Comment')
+            # trainingDataMiddle =  body.get('Middle')
+            # trainingDataEdge =  body.get('Edge')
+            # trainingDataMissed=  body.get('Missed')
+
+            trainingDataName =  request.POST.get('Name')
+            trainingDataFrame =  request.POST.get('Frame')
+            trainingDataComment =  request.POST.get('Comment')
+            trainingDataMiddle =  request.POST.get('Middle')
+            trainingDataEdge =  request.POST.get('Edge')
+            trainingDataMissed=  request.POST.get('Missed')
 
             print(trainingDataName)
             if trainingDataName:
-                 trainingData = TrainingData(Name=trainingDataName)
+                 trainingData = TrainingData(Name=trainingDataName, Frame =trainingDataFrame, Comment =trainingDataComment, Middle =trainingDataMiddle, Edge =trainingDataEdge, Missed =trainingDataMissed)
                  trainingData.save()
 
             return JsonResponse({'message': 'trainingData created successfully'})
