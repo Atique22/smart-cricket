@@ -2,12 +2,21 @@ import React from 'react';
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
-export default function BackendViewData() {
+export default function BackendViewData({ src, alt }) {
 
     const [trainingData, setTrainingData] = useState([]);
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleOpen = () => {
+        setIsOpen(true);
+    };
+
+    const handleClose = () => {
+        setIsOpen(false);
+    };
     useEffect(() => {
         async function getAllTrainingData() {
-           
+
             try {
                 const dataGet = await axios.get("http://127.0.0.1:8000/training/");
                 // console.log("student data is: " + students.data);
@@ -24,7 +33,7 @@ export default function BackendViewData() {
             <div className="row">
                 <div className="col-12">
                     <table className="table table-image">
-                        <thead>
+                    {!isOpen &&  <thead>
                             <tr>
                                 <th scope="col">ID</th>
                                 <th scope="col">Frame</th>
@@ -39,14 +48,16 @@ export default function BackendViewData() {
                                 <th scope="col"></th>
                                 <th scope="col"></th>
                             </tr>
-                        </thead>
+                        </thead>}
                         <tbody>
                             {trainingData.map((trainingData, index) => {
-                                return (
-                                    <tr key={index}>
+                                return (<>
+                                    {!isOpen && <tr key={index}>
                                         <th scope="row">{trainingData.id}</th>
                                         <td className="w-25">
-                                            <img src={trainingData.Frame} className="img-fluid img-thumbnail" alt="Frame AI" />
+                                            {/* <a target="_blank" href='{trainingData.Frame}'> */}
+                                            <img src={trainingData.Frame} className="img-fluid img-thumbnail" alt="Frame AI" onClick={handleOpen} />
+                                            {/* </a> */}
                                         </td>
                                         <td>{trainingData.Date}</td>
                                         <td>{trainingData.Name}</td>
@@ -57,8 +68,21 @@ export default function BackendViewData() {
                                         <td>Edit</td>
                                         <td>Delete</td>
                                         <td>View</td>
-                                    </tr>)
+                                    </tr>}
+
+                                    {isOpen && (
+                                        <div className="modal-overlay">
+                                            <div className="modal-content">
+                                                <button onClick={handleClose}>Close</button>
+                                                <img src={trainingData.Frame} alt={trainingData.Frame}  height={600}/>
+                                            </div>
+                                        </div>
+                                    )}
+                                </>
+                                )
                             })}
+
+                            
                         </tbody>
                     </table>
                 </div>
