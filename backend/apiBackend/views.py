@@ -19,7 +19,7 @@ class TrainingList(ListAPIView):
             # print(body.get('Name'))
             # print(body.get('Date'))
             # trainingDataName =  body.get('Name')
-            # trainingDataFrame =  body.get('Frame')
+            # trainingDataFrame =  body.FILES.get('Frame')
             # trainingDataComment =  body.get('Comment')
             # trainingDataMiddle =  body.get('Middle')
             # trainingDataEdge =  body.get('Edge')

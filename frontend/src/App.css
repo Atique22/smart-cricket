@@ -1,26 +1,33 @@
 /********************Navbar *************************/
-.logo{
+.logo {
   width: 12rem;
 }
+
 /*  ****************************MENU **************************** */
-nav a.nav-link{
+nav a.nav-link {
   letter-spacing: 0.0375rem;
   cursor: pointer;
 }
-nav ul li{
+
+nav ul li {
   text-transform: uppercase;
 }
-.nav-item a{
+
+.nav-item a {
   color: whitesmoke !important;
 }
-:root{
+
+:root {
   --pimary-orange: orange;
   --pimary-green: green;
 }
-.navbar-nav > li > a.active, .navbar-nav > li > a:focus {
+
+.navbar-nav>li>a.active,
+.navbar-nav>li>a:focus {
   border-top: 0.1875rem solid var(--pimary-green);
 }
-.navbar-nav > li > a:hover{
+
+.navbar-nav>li>a:hover {
   border-top: 0.1875rem solid var(--pimary-orange);
 }
 
@@ -597,9 +604,10 @@ nav ul li{
     transform: rotate(360deg);
   }
 }
+
 /***************************graph css******************/
 text.highcharts-credits {
-    display: none;
+  display: none;
 }
 
 /***************************FILE UPLOAD css******************/
@@ -615,9 +623,9 @@ text.highcharts-credits {
   background-color: #13371d;
   padding: 20px;
   border-radius: 10px;
-  border: 0.5px solid rgba(130, 130, 130, 0.25); 
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 
-              0 0 0 1px rgba(0, 0, 0, 0.1);
+  border: 0.5px solid rgba(130, 130, 130, 0.25);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
@@ -648,4 +656,16 @@ h1 {
   margin-top: 30px;
   margin-bottom: 0;
   opacity: 0.65;
+}
+
+/* backend register data */
+
+
+.well {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  
 }
