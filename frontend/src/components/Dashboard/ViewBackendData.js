@@ -21,7 +21,7 @@ export default function BackendViewData() {
 
   const handleDelete = (idDelete) => {
     axios
-      .delete(`http://127.0.0.1:8000/delete/${idDelete}`)
+      .get(`http://127.0.0.1:8000/delete/${idDelete}/`)
       .then((response) => {
         if (response.status === 301) {
           const newLocation = response.get("Location");
@@ -31,6 +31,7 @@ export default function BackendViewData() {
         } else {
           console.log(response);
         }
+        window.location.reload();
       })
       .catch((error) => {
         console.log("error occurs");

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404, render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 from .serializers import TrainingDataSerializer
@@ -42,27 +43,12 @@ class TrainingList(ListAPIView):
         return JsonResponse({'error': 'Invalid request method'})
     
 def delete_record(request, idDelete):
+        # if request.method=='DELETE':
         item_id = int(idDelete)
         try:
             item = TrainingData.objects.get(id = item_id)
         except TrainingData.DoesNotExist:
             return JsonResponse({'message': 'Item deleted errors'})
         item.delete()
+        # return redirect('http://localhost:3000/BackendViewData')
         return JsonResponse({'message': 'Item deleted successfully'})
-
-#      if request.method == 'Delete':
-#         item = TrainingData.objects.get(id=idDelete) 
-#         print("here is my deleted id: "+id)
-#         # count = item.objects.all().delete()
-#         # item = get_object_or_404(TrainingData, pk=idDelete)
-#         item.delete()
-#         return JsonResponse({'message': 'Item deleted successfully'})
-
-# def delete_book(request, book_id):
-#     book_id = int(book_id)
-#     try:
-#         book_sel = Book.objects.get(id = book_id)
-#     except Book.DoesNotExist:
-#         return redirect('index')
-#     book_sel.delete()
-#     return redirect('index')
