@@ -18,6 +18,26 @@ export default function BackendViewData() {
     setIsOpen(false);
     setSelectedImage(null);
   };
+
+  const handleDelete = (idDelete) => {
+    axios
+      .delete(`http://127.0.0.1:8000/delete/${idDelete}`)
+      .then((response) => {
+        if (response.status === 301) {
+          const newLocation = response.get("Location");
+          axios.delete(newLocation).then((response) => {
+            console.log(response);
+          });
+        } else {
+          console.log(response);
+        }
+      })
+      .catch((error) => {
+        console.log("error occurs");
+        console.error(error);
+      });
+  };
+
   useEffect(() => {
     async function getAllTrainingData() {
       try {
@@ -84,7 +104,15 @@ export default function BackendViewData() {
                       <td>{trainingData.Edge}</td>
                       <td>{trainingData.Missed}</td>
                       <td>Edit</td>
-                      <td>Delete</td>
+                      <td>
+                        <button
+                          onClick={() => {
+                            handleDelete(trainingData.id);
+                          }}
+                        >
+                          Delete
+                        </button>
+                      </td>
                       <td>View</td>
                     </tr>
                   );

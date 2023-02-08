@@ -9,3 +9,5 @@ class TrainingData(models.Model):
     Middle = models.IntegerField(default=0)
     Edge = models.IntegerField(default=0)
     Missed = models.IntegerField(default=0)
+
+
