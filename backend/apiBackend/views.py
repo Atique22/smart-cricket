@@ -18,7 +18,40 @@ class TrainingList(ListAPIView):
 
     def post(self, request, *args, **kwargs):
         if request.method == 'POST':
-            # data = json.loads(request.body)
+            
+            trainingDataName =  request.POST.get('Name')
+            trainingDataFrame =  request.FILES.get('Frame')
+            trainingDataComment =  request.POST.get('Comment')
+            trainingDataMiddle =  request.POST.get('Middle')
+            trainingDataEdge =  request.POST.get('Edge')
+            trainingDataMissed=  request.POST.get('Missed')
+
+            if trainingDataName:
+                 trainingData = TrainingData(Name=trainingDataName, Frame =trainingDataFrame, Comment =trainingDataComment, Middle =trainingDataMiddle, Edge =trainingDataEdge, Missed =trainingDataMissed)
+                 trainingData.save()
+
+            return JsonResponse({'message': 'trainingData created successfully'})
+        return JsonResponse({'error': 'Invalid request method'})
+    
+def delete_record(request, idDelete):
+        # if request.method=='DELETE':
+        item_id = int(idDelete)
+        try:
+            item = TrainingData.objects.get(id = item_id)
+        except TrainingData.DoesNotExist:
+            return JsonResponse({'message': 'Item deleted errors'})
+        item.delete()
+        # return redirect('http://localhost:3000/BackendViewData')
+        return JsonResponse({'message': 'Item deleted successfully'})
+
+
+
+
+
+
+
+
+# data = json.loads(request.body)
             # Name = data['Name']
             # Comment = data['Comment']
             # Frame = data['Frame']
@@ -45,29 +78,5 @@ class TrainingList(ListAPIView):
             # trainingDataEdge =  body.get('Edge')
             # trainingDataMissed=  body.get('Missed')
 
-            trainingDataName =  request.POST.get('Name')
-            trainingDataFrame =  request.FILES.get('Frame')
-            trainingDataComment =  request.POST.get('Comment')
-            trainingDataMiddle =  request.POST.get('Middle')
-            trainingDataEdge =  request.POST.get('Edge')
-            trainingDataMissed=  request.POST.get('Missed')
-
             # print("name "+str(trainingDataName))
             # print(trainingDataFrame)
-            if trainingDataName:
-                 trainingData = TrainingData(Name=trainingDataName, Frame =trainingDataFrame, Comment =trainingDataComment, Middle =trainingDataMiddle, Edge =trainingDataEdge, Missed =trainingDataMissed)
-                 trainingData.save()
-
-            return JsonResponse({'message': 'trainingData created successfully'})
-        return JsonResponse({'error': 'Invalid request method'})
-    
-def delete_record(request, idDelete):
-        # if request.method=='DELETE':
-        item_id = int(idDelete)
-        try:
-            item = TrainingData.objects.get(id = item_id)
-        except TrainingData.DoesNotExist:
-            return JsonResponse({'message': 'Item deleted errors'})
-        item.delete()
-        # return redirect('http://localhost:3000/BackendViewData')
-        return JsonResponse({'message': 'Item deleted successfully'})
