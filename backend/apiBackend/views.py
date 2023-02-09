@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404, render
 from django.shortcuts import render, redirect
+from django.core.files.storage import FileSystemStorage
 
 # Create your views here.
 from .serializers import TrainingDataSerializer
@@ -15,13 +16,30 @@ class TrainingList(ListAPIView):
     queryset = TrainingData.objects.all()
     serializer_class = TrainingDataSerializer
 
-    def post(self, request):
+    def post(self, request, *args, **kwargs):
         if request.method == 'POST':
+            # data = json.loads(request.body)
+            # Name = data['Name']
+            # Comment = data['Comment']
+            # Frame = data['Frame']
+            # Middle = data['Middle']
+            # Edge = data['Edge']
+            # Missed = data['Missed']
+            # training_data = TrainingData(
+            # Name=Name,
+            # Comment=Comment,
+            # Frame=Frame,
+            # Middle=Middle,
+            # Edge=Edge,
+            # Missed=Missed
+            # )
+            # training_data.save()
+
             # body = json.loads(request.body.decode('utf-8'))
             # print(body.get('Name'))
-            # print(body.get('Date'))
+            # print(request.POST.get('Frame'))
             # trainingDataName =  body.get('Name')
-            # trainingDataFrame =  body.FILES.get('Frame')
+            # trainingDataFrame = request.FILES.get('Frame')
             # trainingDataComment =  body.get('Comment')
             # trainingDataMiddle =  body.get('Middle')
             # trainingDataEdge =  body.get('Edge')
@@ -34,7 +52,8 @@ class TrainingList(ListAPIView):
             trainingDataEdge =  request.POST.get('Edge')
             trainingDataMissed=  request.POST.get('Missed')
 
-            print(trainingDataName)
+            # print("name "+str(trainingDataName))
+            # print(trainingDataFrame)
             if trainingDataName:
                  trainingData = TrainingData(Name=trainingDataName, Frame =trainingDataFrame, Comment =trainingDataComment, Middle =trainingDataMiddle, Edge =trainingDataEdge, Missed =trainingDataMissed)
                  trainingData.save()
