@@ -9,9 +9,6 @@ function MenuDashBoard() {
   return (
     <>
       <SideNav
-        // onSelect={(selected) => {
-        //     // Add your code here
-        // }}
         style={{
           backgroundColor: "#3b3d3d",
           width: "100px",

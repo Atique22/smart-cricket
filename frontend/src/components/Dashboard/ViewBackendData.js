@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function BackendViewData() {
   const [trainingData, setTrainingData] = useState([]);
+  const [editData, setEditData] = useState({});
   const [isOpen, setIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState({});
 
@@ -20,9 +21,15 @@ export default function BackendViewData() {
     setSelectedImage(null);
   };
 
-  const handleDelete = (idDelete) => {
+  const handleEdit = (data) => {
+    console.log("handle close calling" + data.Comment);
+    setEditData(data);
+    console.log(editData);
+  };
+
+  const handleDelete = (id) => {
     axios
-      .delete(`http://127.0.0.1:8000/delete/${idDelete}/`)
+      .delete(`http://127.0.0.1:8000/delete/${id}/`)
       .then((response) => {
         if (response.status === 301) {
           const newLocation = response.get("Location");
@@ -39,6 +46,26 @@ export default function BackendViewData() {
         console.error(error);
       });
   };
+
+  // const handleUpdate = (data) => {
+  //   axios
+  //     .delete(`http://127.0.0.1:8000/delete/${data.id}/`)
+  //     .then((response) => {
+  //       if (response.status === 301) {
+  //         const newLocation = response.get("Location");
+  //         axios.delete(newLocation).then((response) => {
+  //           console.log(response);
+  //         });
+  //       } else {
+  //         console.log(response);
+  //       }
+  //       window.location.reload();
+  //     })
+  //     .catch((error) => {
+  //       console.log("error occurs");
+  //       console.error(error);
+  //     });
+  // };
 
   useEffect(() => {
     async function getAllTrainingData() {
@@ -127,7 +154,7 @@ export default function BackendViewData() {
                           type="button"
                           className="btn btn-outline-secondary"
                           onClick={() => {
-                            // handleEdit(trainingData.id);
+                            handleEdit(trainingData);
                           }}
                         >
                           Edit
