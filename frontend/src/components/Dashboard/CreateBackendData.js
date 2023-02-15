@@ -77,12 +77,7 @@ export default function CreateBackendData() {
                 <label className="col-sm-2 control-label ">Frame</label>
 
                 <div className="col-sm-10">
-                  <input
-                    name="Frame"
-                    type="file"
-                    // value={frame}
-                    // onChange={(event) => setFrame(event.target.files[0])}
-                  />
+                  <input name="Frame" type="file" />
                 </div>
               </div>
 
@@ -94,8 +89,6 @@ export default function CreateBackendData() {
                     name="Middle"
                     className="form-control"
                     type="number"
-                    // value={middle}
-                    // onChange={(event) => setMiddle(event.target.value)}
                     defaultValue={0}
                   />
                 </div>
@@ -109,8 +102,6 @@ export default function CreateBackendData() {
                     name="Edge"
                     className="form-control"
                     type="number"
-                    // value={edge}
-                    // onChange={(event) => setEdge(event.target.value)}
                     defaultValue={0}
                   />
                 </div>
@@ -124,8 +115,6 @@ export default function CreateBackendData() {
                     name="Missed"
                     className="form-control"
                     type="number"
-                    // value={missed}
-                    // onChange={(event) => setMissed(event.target.value)}
                     defaultValue={0}
                   />
                 </div>

@@ -44,6 +44,23 @@ class TrainingList(ListAPIView):
         item.delete()
         return JsonResponse({'message': 'Item deleted successfully'})
 
+    def put(self, request, *args, **kwargs):
+        print("hello there")
+        if request.method == "PUT":
+            print("PUT IS WORKING ")
+            item_id = kwargs.get('idUpdate')
+            print(item_id)
+            item = get_object_or_404(TrainingData, id=item_id)
+            print(item.Name)
+            updateName = request.data.get('Name')
+            print(updateName)
+            if updateName:
+                item.Name = updateName
+                item.save()
+                return JsonResponse({'message': 'Data updated successfully'})
+            else:
+                return JsonResponse({'error': 'Please provide a student name'})
+
 
 # def delete_record(request, idDelete):
 #     # if request.method=='DELETE':
