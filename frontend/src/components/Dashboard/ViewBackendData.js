@@ -104,9 +104,32 @@ export default function BackendViewData() {
                       <td>{trainingData.Middle}</td>
                       <td>{trainingData.Edge}</td>
                       <td>{trainingData.Missed}</td>
-                      <td>Edit</td>
                       <td>
                         <button
+                          type="button"
+                          className="btn btn-outline-secondary"
+                          onClick={() => {
+                            // handleEdit(trainingData.id);
+                          }}
+                        >
+                          Edit
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          type="button"
+                          className="btn btn-outline-success"
+                          onClick={() => {
+                            // handleView(trainingData.id);
+                          }}
+                        >
+                          View
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          type="button"
+                          className="btn btn-outline-danger"
                           onClick={() => {
                             handleDelete(trainingData.id);
                           }}
@@ -114,7 +137,6 @@ export default function BackendViewData() {
                           Delete
                         </button>
                       </td>
-                      <td>View</td>
                     </tr>
                   );
                 })}
