@@ -1,5 +1,7 @@
 import React, { useRef } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
+
 export default function CreateBackendData() {
   const formRef = useRef(null);
 
@@ -23,6 +25,16 @@ export default function CreateBackendData() {
 
   return (
     <div>
+      <Link to="/CreateBackendData">
+        <button type="button" className="btn m-2 btn-outline-primary btn-lg">
+          Create
+        </button>
+      </Link>
+      <Link to="/BackendViewData">
+        <button type="button" className="btn m-2 btn-outline-success btn-lg">
+          View
+        </button>
+      </Link>
       <div className="well  m-5">
         <div className="">
           <form

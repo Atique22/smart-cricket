@@ -39,7 +39,6 @@ class TrainingList(ListAPIView):
         return JsonResponse({'error': 'Invalid request method'})
 
     def delete(self, request, *args, **kwargs):
-
         item_id = kwargs.get('idDelete')
         item = get_object_or_404(TrainingData, id=item_id)
         item.delete()

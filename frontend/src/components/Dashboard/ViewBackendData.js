@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function BackendViewData() {
   const [trainingData, setTrainingData] = useState([]);
@@ -56,6 +57,22 @@ export default function BackendViewData() {
     <div className="container">
       <div className="row">
         <div className="col-12">
+          <Link to="/CreateBackendData">
+            <button
+              type="button"
+              className="btn m-2 btn-outline-primary btn-lg"
+            >
+              Create
+            </button>
+          </Link>
+          <Link to="/BackendViewData">
+            <button
+              type="button"
+              className="btn m-2 btn-outline-success btn-lg"
+            >
+              View
+            </button>
+          </Link>
           {isOpen ? (
             <div className="modal-overlay m-4">
               <div className="modal-content">
