@@ -159,6 +159,7 @@ export default function BackendViewData() {
                       <input
                         name="Name"
                         type="text"
+                        class="form-control"
                         value={selectedData.Name}
                       />
                     </li>
@@ -167,6 +168,8 @@ export default function BackendViewData() {
                       <input
                         name="Comment"
                         type="text"
+                        class="form-control"
+                        row="3"
                         value={selectedData.Comment}
                       />
                     </li>
@@ -175,6 +178,7 @@ export default function BackendViewData() {
                       <input
                         name="Middle"
                         type="number"
+                        class="form-control"
                         value={selectedData.Middle}
                       />
                     </li>
@@ -184,6 +188,7 @@ export default function BackendViewData() {
                       <input
                         name="Missed"
                         type="number"
+                        class="form-control"
                         value={selectedData.Edge}
                       />
                     </li>
@@ -193,6 +198,7 @@ export default function BackendViewData() {
                       <input
                         name="Edge"
                         type="number"
+                        class="form-control"
                         value={selectedData.Missed}
                       />
                     </li>
