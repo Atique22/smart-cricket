@@ -3,34 +3,10 @@ import axios from "axios";
 export default function CreateBackendData() {
   const formRef = useRef(null);
 
-  // const [name, setName] = useState("");
-  // const [comments, setComments] = useState("");
-  // const [frame, setFrame] = useState(null);
-  // const [middle, setMiddle] = useState(0);
-  // const [edge, setEdge] = useState(0);
-  // const [missed, setMissed] = useState(0);
-  // const [formData, setFormData] = useState({
-  //   Name: "",
-  //   Comment: "",
-  //   Frame: null,
-  //   Middle: 0,
-  //   Edge: 0,
-  //   Missed: 0,
-  // });
-
   const handleSubmit = (event) => {
     // a.currentValue
     event.preventDefault();
     const formData = new FormData(formRef.current);
-
-    // setFormData({
-    //   Name: name,
-    //   Comment: comments,
-    //   Frame: frame.name,
-    //   Middle: middle,
-    //   Edge: edge,
-    //   Missed: missed,
-    // });
 
     console.log(formData);
     axios
@@ -51,8 +27,6 @@ export default function CreateBackendData() {
         <div className="">
           <form
             ref={formRef}
-            // action="http://127.0.0.1:8000/training/"
-            // method="POST"
             className="form-horizontal"
             onSubmit={handleSubmit}
             onChange={formRef.current}
