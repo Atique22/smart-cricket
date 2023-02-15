@@ -7,20 +7,19 @@ export default function BackendViewData() {
   const [trainingData, setTrainingData] = useState([]);
   const [editData, setEditData] = useState({});
   const [whichDiv, setWhichDiv] = useState(0);
-  const [selectedImage, setSelectedImage] = useState({});
+  const [selectedData, setSelectedData] = useState({});
 
   const handleOpen = (data, divNo) => {
     console.log("src :");
     setWhichDiv(divNo);
     console.log("frame data: " + data.Frame);
-    const myFrame = data.Frame;
-    setSelectedImage({ myFrame });
+    setSelectedData(data);
   };
 
   const handleClose = () => {
     console.log("handle close calling");
     setWhichDiv(0);
-    setSelectedImage(null);
+    setSelectedData(null);
   };
 
   const handleEdit = (data) => {
@@ -109,8 +108,8 @@ export default function BackendViewData() {
               <div className="modal-content">
                 <button onClick={handleClose}>Close</button>
                 <img
-                  src={selectedImage.myFrame}
-                  alt={selectedImage.myFrame}
+                  src={selectedData.Frame}
+                  alt={selectedData.Frame}
                   height={600}
                 />
               </div>
