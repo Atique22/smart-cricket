@@ -66,6 +66,7 @@ export default function BackendViewData() {
                   height={600}
                 />
               </div>
+              <div></div>
             </div>
           ) : (
             <table className="table table-image">
@@ -119,9 +120,7 @@ export default function BackendViewData() {
                         <button
                           type="button"
                           className="btn btn-outline-success"
-                          onClick={() => {
-                            // handleView(trainingData.id);
-                          }}
+                          onClick={() => handleOpen(trainingData.Frame)}
                         >
                           View
                         </button>
