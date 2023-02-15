@@ -254,7 +254,7 @@ export default function BackendViewData() {
                     </li>
                     <li className="list-group-item border-0">
                       <button type="submit" className="btn btn-primary">
-                        Submit
+                        Update
                       </button>
                     </li>
                   </form>
