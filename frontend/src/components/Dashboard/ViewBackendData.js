@@ -6,18 +6,20 @@ import { Link } from "react-router-dom";
 export default function BackendViewData() {
   const [trainingData, setTrainingData] = useState([]);
   const [editData, setEditData] = useState({});
-  const [isOpen, setIsOpen] = useState(false);
+  const [whichDiv, setWhichDiv] = useState(0);
   const [selectedImage, setSelectedImage] = useState({});
 
-  const handleOpen = (src) => {
+  const handleOpen = (data, divNo) => {
     console.log("src :");
-    setIsOpen(true);
-    setSelectedImage({ src });
+    setWhichDiv(divNo);
+    console.log("frame data: " + data.Frame);
+    const myFrame = data.Frame;
+    setSelectedImage({ myFrame });
   };
 
   const handleClose = () => {
     console.log("handle close calling");
-    setIsOpen(false);
+    setWhichDiv(0);
     setSelectedImage(null);
   };
 
@@ -49,7 +51,7 @@ export default function BackendViewData() {
 
   // const handleUpdate = (data) => {
   //   axios
-  //     .delete(`http://127.0.0.1:8000/delete/${data.id}/`)
+  //     .delete(`http://127.0.0.1:8000/update/${data.id}/`, data)
   //     .then((response) => {
   //       if (response.status === 301) {
   //         const newLocation = response.get("Location");
@@ -100,19 +102,23 @@ export default function BackendViewData() {
               View
             </button>
           </Link>
-          {isOpen ? (
+
+          {/* /////////////////////////////////view///////////////////////////////////// */}
+          {whichDiv === 1 && (
             <div className="modal-overlay m-4">
               <div className="modal-content">
                 <button onClick={handleClose}>Close</button>
                 <img
-                  src={selectedImage.src}
-                  alt={selectedImage.src}
+                  src={selectedImage.myFrame}
+                  alt={selectedImage.myFrame}
                   height={600}
                 />
               </div>
               <div></div>
             </div>
-          ) : (
+          )}
+          {/* /////////////////////////////////view table///////////////////////////////////// */}
+          {whichDiv === 0 && (
             <table className="table table-image">
               <thead>
                 <tr>
@@ -140,7 +146,7 @@ export default function BackendViewData() {
                           src={trainingData.Frame}
                           className="img-fluid img-thumbnail"
                           alt="Frame AI"
-                          onClick={() => handleOpen(trainingData.Frame)}
+                          onClick={() => handleOpen(trainingData, 1)}
                         />
                       </td>
                       <td>{trainingData.Date}</td>
@@ -164,7 +170,7 @@ export default function BackendViewData() {
                         <button
                           type="button"
                           className="btn btn-outline-success"
-                          onClick={() => handleOpen(trainingData.Frame)}
+                          onClick={() => handleOpen(trainingData, 1)}
                         >
                           View
                         </button>
