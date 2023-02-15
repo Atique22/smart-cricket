@@ -148,12 +148,12 @@ export default function BackendViewData() {
                   height={600}
                 />
                 <ul className="list-group">
-                  <form>
-                    <li className="list-group-item">
+                  <form className="border">
+                    <li className="list-group-item  border-0">
                       Date: {selectedData.Date}
                     </li>
 
-                    <li className="list-group-item">
+                    <li className="list-group-item border-0">
                       {" "}
                       Name:
                       <input
@@ -163,7 +163,7 @@ export default function BackendViewData() {
                         value={selectedData.Name}
                       />
                     </li>
-                    <li className="list-group-item">
+                    <li className="list-group-item border-0">
                       Comment:{" "}
                       <input
                         name="Comment"
@@ -173,7 +173,7 @@ export default function BackendViewData() {
                         value={selectedData.Comment}
                       />
                     </li>
-                    <li className="list-group-item">
+                    <li className="list-group-item border-0">
                       Middle:{" "}
                       <input
                         name="Middle"
@@ -182,7 +182,7 @@ export default function BackendViewData() {
                         value={selectedData.Middle}
                       />
                     </li>
-                    <li className="list-group-item">
+                    <li className="list-group-item border-0">
                       {" "}
                       Missed:{" "}
                       <input
@@ -192,7 +192,7 @@ export default function BackendViewData() {
                         value={selectedData.Edge}
                       />
                     </li>
-                    <li className="list-group-item">
+                    <li className="list-group-item border-0">
                       {" "}
                       Edge:{" "}
                       <input
@@ -201,6 +201,11 @@ export default function BackendViewData() {
                         class="form-control"
                         value={selectedData.Missed}
                       />
+                    </li>
+                    <li className="list-group-item border-0">
+                      <button type="submit" class="btn btn-primary">
+                        Submit
+                      </button>
                     </li>
                   </form>
                 </ul>
