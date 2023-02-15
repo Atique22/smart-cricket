@@ -148,25 +148,55 @@ export default function BackendViewData() {
                   height={600}
                 />
                 <ul className="list-group">
-                  <li className="list-group-item">Date: {selectedData.Date}</li>
-                  <li className="list-group-item">
-                    {" "}
-                    Name: {selectedData.Name}
-                  </li>
-                  <li className="list-group-item">
-                    Comment: {selectedData.Comment}
-                  </li>
-                  <li className="list-group-item">
-                    Middle: {selectedData.Middle}
-                  </li>
-                  <li className="list-group-item">
-                    {" "}
-                    Missed: {selectedData.Edge}
-                  </li>
-                  <li className="list-group-item">
-                    {" "}
-                    Edge: {selectedData.Missed}
-                  </li>
+                  <form>
+                    <li className="list-group-item">
+                      Date: {selectedData.Date}
+                    </li>
+
+                    <li className="list-group-item">
+                      {" "}
+                      Name:
+                      <input
+                        name="Name"
+                        type="text"
+                        value={selectedData.Name}
+                      />
+                    </li>
+                    <li className="list-group-item">
+                      Comment:{" "}
+                      <input
+                        name="Comment"
+                        type="text"
+                        value={selectedData.Comment}
+                      />
+                    </li>
+                    <li className="list-group-item">
+                      Middle:{" "}
+                      <input
+                        name="Middle"
+                        type="number"
+                        value={selectedData.Middle}
+                      />
+                    </li>
+                    <li className="list-group-item">
+                      {" "}
+                      Missed:{" "}
+                      <input
+                        name="Missed"
+                        type="number"
+                        value={selectedData.Edge}
+                      />
+                    </li>
+                    <li className="list-group-item">
+                      {" "}
+                      Edge:{" "}
+                      <input
+                        name="Edge"
+                        type="number"
+                        value={selectedData.Missed}
+                      />
+                    </li>
+                  </form>
                 </ul>
               </div>
               <div></div>
