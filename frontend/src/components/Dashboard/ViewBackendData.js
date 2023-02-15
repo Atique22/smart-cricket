@@ -102,7 +102,7 @@ export default function BackendViewData() {
             </button>
           </Link>
 
-          {/* /////////////////////////////////view///////////////////////////////////// */}
+          {/* /////////////////////////////////view frame ///////////////////////////////////// */}
           {whichDiv === 1 && (
             <div className="modal-overlay m-4">
               <div className="modal-content">
@@ -112,6 +112,27 @@ export default function BackendViewData() {
                   alt={selectedData.Frame}
                   height={600}
                 />
+                <ul className="list-group">
+                  <li className="list-group-item">Date: {selectedData.Date}</li>
+                  <li className="list-group-item">
+                    {" "}
+                    Name: {selectedData.Name}
+                  </li>
+                  <li className="list-group-item">
+                    Comment: {selectedData.Comment}
+                  </li>
+                  <li className="list-group-item">
+                    Middle: {selectedData.Middle}
+                  </li>
+                  <li className="list-group-item">
+                    {" "}
+                    Missed: {selectedData.Edge}
+                  </li>
+                  <li className="list-group-item">
+                    {" "}
+                    Edge: {selectedData.Missed}
+                  </li>
+                </ul>
               </div>
               <div></div>
             </div>
