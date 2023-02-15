@@ -110,7 +110,12 @@ export default function BackendViewData() {
           {whichDiv === 1 && (
             <div className="modal-overlay m-4">
               <div className="modal-content">
-                <button onClick={handleClose}>Close view</button>
+                <button
+                  className="btn btn-outline-danger rounded-0"
+                  onClick={handleClose}
+                >
+                  Close view
+                </button>
                 <img
                   src={selectedData.Frame}
                   alt={selectedData.Frame}
@@ -145,7 +150,12 @@ export default function BackendViewData() {
           {whichDiv === 2 && (
             <div className="modal-overlay m-4">
               <div className="modal-content">
-                <button onClick={handleClose}>Close Update</button>
+                <button
+                  className="btn btn-outline-danger rounded-0"
+                  onClick={handleClose}
+                >
+                  Close Update
+                </button>
                 <img
                   src={selectedData.Frame}
                   alt={selectedData.Frame}
