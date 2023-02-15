@@ -53,9 +53,18 @@ class TrainingList(ListAPIView):
             item = get_object_or_404(TrainingData, id=item_id)
             print(item.Name)
             updateName = request.data.get('Name')
+            updateComment = request.data.get('Comment')
+            updateMiddle = request.data.get('Middle')
+            updateMissed = request.data.get('Missed')
+            updateEdge = request.data.get('Edge')
+
             print(updateName)
             if updateName:
                 item.Name = updateName
+                item.Comment = updateComment
+                item.Middle = updateMiddle
+                item.Missed = updateMissed
+                item.Edge = updateEdge
                 item.save()
                 return JsonResponse({'message': 'Data updated successfully'})
             else:

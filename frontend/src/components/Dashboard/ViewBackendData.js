@@ -169,7 +169,7 @@ export default function BackendViewData() {
                       <input
                         name="Name"
                         type="text"
-                        class="form-control"
+                        className="form-control"
                         value={editData.Name}
                         onChange={(event) => {
                           setEditData({
@@ -184,7 +184,7 @@ export default function BackendViewData() {
                       <input
                         name="Comment"
                         type="text"
-                        class="form-control"
+                        className="form-control"
                         row="3"
                         value={editData.Comment}
                         onChange={(event) => {
@@ -200,7 +200,7 @@ export default function BackendViewData() {
                       <input
                         name="Middle"
                         type="number"
-                        class="form-control"
+                        className="form-control"
                         value={editData.Middle}
                         onChange={(event) => {
                           setEditData({
@@ -216,7 +216,7 @@ export default function BackendViewData() {
                       <input
                         name="Missed"
                         type="number"
-                        class="form-control"
+                        className="form-control"
                         value={editData.Missed}
                         onChange={(event) => {
                           setEditData({
@@ -232,7 +232,7 @@ export default function BackendViewData() {
                       <input
                         name="Edge"
                         type="number"
-                        class="form-control"
+                        className="form-control"
                         value={editData.Edge}
                         onChange={(event) => {
                           setEditData({
@@ -243,7 +243,7 @@ export default function BackendViewData() {
                       />
                     </li>
                     <li className="list-group-item border-0">
-                      <button type="submit" class="btn btn-primary">
+                      <button type="submit" className="btn btn-primary">
                         Submit
                       </button>
                     </li>
