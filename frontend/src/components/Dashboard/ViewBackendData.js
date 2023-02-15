@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function BackendViewData() {
   const [trainingData, setTrainingData] = useState([]);
-  const [editData, setEditData] = useState({});
+  // const [editData, setEditData] = useState({});
   const [whichDiv, setWhichDiv] = useState(0);
   const [selectedData, setSelectedData] = useState({});
 
@@ -22,11 +22,11 @@ export default function BackendViewData() {
     setSelectedData(null);
   };
 
-  const handleEdit = (data) => {
-    console.log("handle close calling" + data.Comment);
-    setEditData(data);
-    console.log(editData);
-  };
+  // const handleEdit = (data) => {
+  //   console.log("handle close calling" + data.Comment);
+  //   setEditData(data);
+  //   console.log(editData);
+  // };
 
   const handleDelete = (id) => {
     axios
@@ -106,7 +106,42 @@ export default function BackendViewData() {
           {whichDiv === 1 && (
             <div className="modal-overlay m-4">
               <div className="modal-content">
-                <button onClick={handleClose}>Close</button>
+                <button onClick={handleClose}>Close view</button>
+                <img
+                  src={selectedData.Frame}
+                  alt={selectedData.Frame}
+                  height={600}
+                />
+                <ul className="list-group">
+                  <li className="list-group-item">Date: {selectedData.Date}</li>
+                  <li className="list-group-item">
+                    {" "}
+                    Name: {selectedData.Name}
+                  </li>
+                  <li className="list-group-item">
+                    Comment: {selectedData.Comment}
+                  </li>
+                  <li className="list-group-item">
+                    Middle: {selectedData.Middle}
+                  </li>
+                  <li className="list-group-item">
+                    {" "}
+                    Missed: {selectedData.Edge}
+                  </li>
+                  <li className="list-group-item">
+                    {" "}
+                    Edge: {selectedData.Missed}
+                  </li>
+                </ul>
+              </div>
+              <div></div>
+            </div>
+          )}
+          {/* /////////////////////////////////UPDATE EDIT frame ///////////////////////////////////// */}
+          {whichDiv === 2 && (
+            <div className="modal-overlay m-4">
+              <div className="modal-content">
+                <button onClick={handleClose}>Close Update</button>
                 <img
                   src={selectedData.Frame}
                   alt={selectedData.Frame}
@@ -180,7 +215,7 @@ export default function BackendViewData() {
                           type="button"
                           className="btn btn-outline-secondary"
                           onClick={() => {
-                            handleEdit(trainingData);
+                            handleOpen(trainingData, 2);
                           }}
                         >
                           Edit
