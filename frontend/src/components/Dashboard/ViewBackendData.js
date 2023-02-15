@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function BackendViewData() {
   const [trainingData, setTrainingData] = useState([]);
-  // const [editData, setEditData] = useState({});
+  const [editData, setEditData] = useState({});
   const [whichDiv, setWhichDiv] = useState(0);
   const [selectedData, setSelectedData] = useState({});
 
@@ -14,6 +14,9 @@ export default function BackendViewData() {
     setWhichDiv(divNo);
     console.log("frame data: " + data.Frame);
     setSelectedData(data);
+    if (divNo === 2) {
+      handleEdit(data);
+    }
   };
 
   const handleClose = () => {
@@ -22,11 +25,11 @@ export default function BackendViewData() {
     setSelectedData(null);
   };
 
-  // const handleEdit = (data) => {
-  //   console.log("handle close calling" + data.Comment);
-  //   setEditData(data);
-  //   console.log(editData);
-  // };
+  const handleEdit = (data) => {
+    console.log("handle close calling" + data.Comment);
+    setEditData(data);
+    console.log(editData);
+  };
 
   const handleDelete = (id) => {
     axios
@@ -48,25 +51,26 @@ export default function BackendViewData() {
       });
   };
 
-  // const handleUpdate = (data) => {
-  //   axios
-  //     .delete(`http://127.0.0.1:8000/update/${data.id}/`, data)
-  //     .then((response) => {
-  //       if (response.status === 301) {
-  //         const newLocation = response.get("Location");
-  //         axios.delete(newLocation).then((response) => {
-  //           console.log(response);
-  //         });
-  //       } else {
-  //         console.log(response);
-  //       }
-  //       window.location.reload();
-  //     })
-  //     .catch((error) => {
-  //       console.log("error occurs");
-  //       console.error(error);
-  //     });
-  // };
+  const handleUpdate = (data) => {
+    console.log("update call here");
+    axios
+      .put(`http://127.0.0.1:8000/update/${data.id}/`, data)
+      .then((response) => {
+        if (response.status === 301) {
+          const newLocation = response.get("Location");
+          axios.put(newLocation).then((response) => {
+            console.log(response);
+          });
+        } else {
+          console.log(response);
+        }
+        window.location.reload();
+      })
+      .catch((error) => {
+        console.log("error occurs");
+        console.error(error);
+      });
+  };
 
   useEffect(() => {
     async function getAllTrainingData() {
@@ -148,9 +152,15 @@ export default function BackendViewData() {
                   height={600}
                 />
                 <ul className="list-group">
-                  <form className="border">
+                  <form
+                    className="border"
+                    onSubmit={(event) => {
+                      event.preventDefault();
+                      handleUpdate(editData);
+                    }}
+                  >
                     <li className="list-group-item  border-0">
-                      Date: {selectedData.Date}
+                      Date: {editData.Date}
                     </li>
 
                     <li className="list-group-item border-0">
@@ -160,7 +170,13 @@ export default function BackendViewData() {
                         name="Name"
                         type="text"
                         class="form-control"
-                        value={selectedData.Name}
+                        value={editData.Name}
+                        onChange={(event) => {
+                          setEditData({
+                            ...editData,
+                            Name: event.target.value,
+                          });
+                        }}
                       />
                     </li>
                     <li className="list-group-item border-0">
@@ -170,7 +186,13 @@ export default function BackendViewData() {
                         type="text"
                         class="form-control"
                         row="3"
-                        value={selectedData.Comment}
+                        value={editData.Comment}
+                        onChange={(event) => {
+                          setEditData({
+                            ...editData,
+                            Comment: event.target.value,
+                          });
+                        }}
                       />
                     </li>
                     <li className="list-group-item border-0">
@@ -179,7 +201,13 @@ export default function BackendViewData() {
                         name="Middle"
                         type="number"
                         class="form-control"
-                        value={selectedData.Middle}
+                        value={editData.Middle}
+                        onChange={(event) => {
+                          setEditData({
+                            ...editData,
+                            Middle: event.target.value,
+                          });
+                        }}
                       />
                     </li>
                     <li className="list-group-item border-0">
@@ -189,7 +217,13 @@ export default function BackendViewData() {
                         name="Missed"
                         type="number"
                         class="form-control"
-                        value={selectedData.Edge}
+                        value={editData.Missed}
+                        onChange={(event) => {
+                          setEditData({
+                            ...editData,
+                            Missed: event.target.value,
+                          });
+                        }}
                       />
                     </li>
                     <li className="list-group-item border-0">
@@ -199,7 +233,13 @@ export default function BackendViewData() {
                         name="Edge"
                         type="number"
                         class="form-control"
-                        value={selectedData.Missed}
+                        value={editData.Edge}
+                        onChange={(event) => {
+                          setEditData({
+                            ...editData,
+                            Edge: event.target.value,
+                          });
+                        }}
                       />
                     </li>
                     <li className="list-group-item border-0">
