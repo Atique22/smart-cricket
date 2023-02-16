@@ -21,6 +21,7 @@ export default function CreateBackendData() {
         console.error("Error:", error);
       });
     console.log(formData);
+    window.location.reload();
   };
 
   return (
