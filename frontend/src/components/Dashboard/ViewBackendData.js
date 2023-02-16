@@ -105,6 +105,14 @@ export default function BackendViewData() {
               View
             </button>
           </Link>
+          <Link to="/dashboard">
+            <button
+              type="button"
+              className="btn m-2 btn-outline-warning btn-lg"
+            >
+              Go to Dashboard
+            </button>
+          </Link>
 
           {/* /////////////////////////////////view frame ///////////////////////////////////// */}
           {whichDiv === 1 && (

@@ -24,7 +24,7 @@ export default function CreateBackendData() {
   };
 
   return (
-    <div>
+    <div className="container">
       <Link to="/CreateBackendData">
         <button type="button" className="btn m-2 btn-outline-primary btn-lg">
           Create
@@ -33,6 +33,11 @@ export default function CreateBackendData() {
       <Link to="/BackendViewData">
         <button type="button" className="btn m-2 btn-outline-success btn-lg">
           View
+        </button>
+      </Link>
+      <Link to="/dashboard">
+        <button type="button" className="btn m-2 btn-outline-warning btn-lg">
+          Go to Dashboard
         </button>
       </Link>
       <div className="well  m-5">
