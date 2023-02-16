@@ -669,3 +669,12 @@ h1 {
   border: 1px solid #e3e3e3;
   
 }
+
+/* TEXT WRAP IN TABLE ROW */
+
+.text-truncate {
+  max-width: 110px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

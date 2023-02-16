@@ -187,7 +187,7 @@ export default function BackendViewData() {
                       <input
                         name="Name"
                         type="text"
-                        className="form-control"
+                        className="form-control "
                         value={editData.Name}
                         onChange={(event) => {
                           setEditData({
@@ -279,8 +279,12 @@ export default function BackendViewData() {
                   <th scope="col">ID</th>
                   <th scope="col">Frame</th>
                   <th scope="col">Date</th>
-                  <th scope="col">Name</th>
-                  <th scope="col">comments</th>
+                  <th scope="col" className="text-truncate">
+                    Name
+                  </th>
+                  <th scope="col" className="text-truncate">
+                    comments
+                  </th>
 
                   <th scope="col">Middle</th>
                   <th scope="col">Edge</th>
@@ -303,9 +307,9 @@ export default function BackendViewData() {
                           onClick={() => handleOpen(trainingData, 1)}
                         />
                       </td>
-                      <td>{trainingData.Date}</td>
-                      <td>{trainingData.Name}</td>
-                      <td>{trainingData.Comment}</td>
+                      <td className=" text-truncate">{trainingData.Date}</td>
+                      <td className="text-truncate">{trainingData.Name}</td>
+                      <td className="text-truncate">{trainingData.Comment}</td>
                       <td>{trainingData.Middle}</td>
                       <td>{trainingData.Edge}</td>
                       <td>{trainingData.Missed}</td>
