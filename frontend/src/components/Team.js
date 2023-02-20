@@ -1,7 +1,7 @@
 import React,{useRef,useEffect} from 'react'
 import ProfileTeam from './Profile_team'
-import team1 from "../assets/img/team/team1.png"
-import team2 from "../assets/img/team/team2.png"
+import team1 from "../assets/img/team/team1A.jpg"
+import team2 from "../assets/img/team/team1.jpg"
 import team3 from "../assets/img/team/team3.png"
 import team4 from "../assets/img/team/team4.png"
 
