@@ -1,7 +1,7 @@
 # FYP---Project
 
 ##frontend commands ->
-* cd frontens
+* cd frontend
 * npm install
 * npm start
 
