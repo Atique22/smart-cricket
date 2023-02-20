@@ -1,8 +1,9 @@
 import React, { useRef } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function CreateBackendData() {
+  const navigate = useNavigate();
   const formRef = useRef(null);
 
   const handleSubmit = (event) => {
@@ -21,7 +22,7 @@ export default function CreateBackendData() {
         console.error("Error:", error);
       });
     console.log(formData);
-    window.location.reload();
+    navigate("/BackendViewData");
   };
 
   return (

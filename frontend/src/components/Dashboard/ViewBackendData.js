@@ -1,9 +1,10 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function BackendViewData() {
+  const navigate = useNavigate();
   const [trainingData, setTrainingData] = useState([]);
   const [editData, setEditData] = useState({});
   const [whichDiv, setWhichDiv] = useState(0);
@@ -43,7 +44,8 @@ export default function BackendViewData() {
         } else {
           console.log(response);
         }
-        window.location.reload();
+        // window.location.reload();
+        window.location.href = "/BackendViewData";
       })
       .catch((error) => {
         console.log("error occurs");
@@ -64,7 +66,8 @@ export default function BackendViewData() {
         } else {
           console.log(response);
         }
-        window.location.reload();
+        // window.location.reload();
+        navigate("/BackendViewData");
       })
       .catch((error) => {
         console.log("error occurs");
