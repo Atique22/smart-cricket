@@ -118,21 +118,22 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ORIGIN_ALLOW_ALL = True
-# or specify allowed domains as a list 
+# or specify allowed domains as a list
 CORS_ORIGIN_WHITELIST = [
-   "http://127.0.0.1:3000", 
-    "http://127.0.0.1", 
-    "http://localhost:3000", 
+    "http://127.0.0.1:3000",
+    "http://127.0.0.1",
+    "http://localhost:3000",
     "http://localhost"
 ]
-ALLOWED_HOSTS = ['*', 
-    "http://127.0.0.1:3000", 
-    "http://127.0.0.1", 
-    "http://localhost:3000", 
-    "http://localhost"
-]
+ALLOWED_HOSTS = ['*',
+                 "http://127.0.0.1:3000",
+                 "http://127.0.0.1",
+                 "http://localhost:3000",
+                 "http://localhost"
+                 ]
 
-# for images 
+# for images
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = BASE_DIR / ''
