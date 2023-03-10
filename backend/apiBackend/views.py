@@ -65,13 +65,10 @@ class TrainingList(ListAPIView):
                 print(frameType)
                 if frameType == 'Middle Ball':
                     md = 1
-                    print('ok Middle Ball')
                 if frameType == 'Edge Ball':
                     ed = 1
-                    print('ok Middle Ball')
                 if frameType == 'Missed Ball':
                     mi = 1
-                    print('ok Middle Ball')
                 # create a new Frame object and save it to the database
                 frame_data = TrainingData(Name=frameName,
                                           Comment=frameComment, Frame=filename, Middle=md, Edge=ed, Missed=mi)
