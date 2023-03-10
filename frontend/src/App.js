@@ -5,6 +5,8 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import Home from "./components/Home";
 import Team from "./components/Team";
 import Footer from "./components/Footer";
+import VideoCapture from "./components/UploadFiles/VideoCaptureFrame";
+
 // import Contact from "./components/Contact";
 import TrainingDataDashboard from "./components/Dashboard/DashBoardTrainingData";
 import FileDataDisplay from "./components/UploadFiles/FileDataDisplay";
@@ -30,6 +32,7 @@ function App() {
             }
           />
           <Route path="/dashboard" element={<TrainingDataDashboard />} />
+          <Route path="/video" element={<VideoCapture />} />
           <Route path="/FileDataDisplay" element={<FileDataDisplay />} />
           <Route path="/BackendViewData" element={<BackendViewData />} />
           <Route path="/CreateBackendData" element={<CreateBackendData />} />

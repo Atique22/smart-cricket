@@ -11,6 +11,11 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from django.http import HttpResponse
 
+import datetime
+import base64
+from io import BytesIO
+from PIL import Image
+
 
 class TrainingList(ListAPIView):
     queryset = TrainingData.objects.all()
@@ -30,10 +35,47 @@ class TrainingList(ListAPIView):
             trainingDataEdge = request.POST.get('Edge')
             trainingDataMissed = request.POST.get('Missed')
 
-            if trainingDataName:
+            # from video capturing
+
+            frameName = request.POST.get('frameName')
+            frameType = request.POST.get('frameType')
+            frameComment = request.POST.get('frameComment')
+            frameImage = request.POST.get('frameImage')
+
+            if trainingDataFrame:
                 trainingData = TrainingData(Name=trainingDataName, Frame=trainingDataFrame, Comment=trainingDataComment,
                                             Middle=trainingDataMiddle, Edge=trainingDataEdge, Missed=trainingDataMissed)
                 trainingData.save()
+
+            if frameImage:
+                # decode the base64 image data into bytes
+                # remove the "data:image/jpeg;base64," prefix
+                data = frameImage.split(',')[1]
+                image_bytes = base64.b64decode(data)
+                image = Image.open(BytesIO(image_bytes))
+                # generate a new filename based on the current timestamp
+                timestamp = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+                filename = f'captured_frame_{timestamp}.jpg'
+
+                # save the image to a file with the new filename
+                image.save(filename)
+                md = 0
+                ed = 0
+                mi = 0
+                print(frameType)
+                if frameType == 'Middle Ball':
+                    md = 1
+                    print('ok Middle Ball')
+                if frameType == 'Edge Ball':
+                    ed = 1
+                    print('ok Middle Ball')
+                if frameType == 'Missed Ball':
+                    mi = 1
+                    print('ok Middle Ball')
+                # create a new Frame object and save it to the database
+                frame_data = TrainingData(Name=frameName,
+                                          Comment=frameComment, Frame=filename, Middle=md, Edge=ed, Missed=mi)
+                frame_data.save()
 
             return JsonResponse({'message': 'trainingData created successfully'})
         return JsonResponse({'error': 'Invalid request method'})

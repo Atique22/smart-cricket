@@ -25,7 +25,7 @@ function MenuDashBoard() {
               </Link>
             </NavIcon>
 
-            <NavText>Go Back to Home</NavText>
+            <NavText>Home</NavText>
             <NavItem> </NavItem>
           </NavItem>
 
@@ -45,7 +45,7 @@ function MenuDashBoard() {
                 <AiFillFolder size="27" />
               </Link>
             </NavIcon>
-            <NavText>BackendViewData</NavText>
+            <NavText>Frames Capture</NavText>
             <NavItem eventKey="charts/linechart">
               {/* <NavText>
                                 Line Chart
@@ -63,8 +63,19 @@ function MenuDashBoard() {
                 <AiFillFolder size="27" />
               </Link>
             </NavIcon>
-            <NavText>CreateBackendData</NavText>
+            <NavText>Add Frame Data </NavText>
             <NavItem eventKey="charts/linechart"></NavItem>
+          </NavItem>
+          <NavItem eventKey="video">
+            <NavIcon>
+              <Link to="/video">
+                {" "}
+                <AiFillFolder size="27" />
+              </Link>
+            </NavIcon>
+
+            <NavText>Video capturing</NavText>
+            <NavItem> </NavItem>
           </NavItem>
         </SideNav.Nav>
       </SideNav>
