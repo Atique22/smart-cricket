@@ -45,7 +45,10 @@ export default function BackendViewData() {
           console.log(response);
         }
         // window.location.reload();
-        window.location.href = "/BackendViewData";
+        alert("Deleted Successfully");
+        setWhichDiv(0);
+        setSelectedData(null);
+        navigate("/BackendViewData");
       })
       .catch((error) => {
         console.log("error occurs");
@@ -66,7 +69,7 @@ export default function BackendViewData() {
         } else {
           console.log(response);
         }
-        // window.location.reload();
+        alert("Update Successfully");
         navigate("/BackendViewData");
       })
       .catch((error) => {
