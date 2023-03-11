@@ -1,16 +1,18 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import axios from "axios";
 // import myVideo from "../../assets/video.mp4";
 // import Button from "react-bootstrap/Button";
 import { useNavigate } from "react-router-dom";
 
 function VideoCapture({ fileData, source }) {
+  const [whichDiv, setWhichDiv] = useState(0);
   const navigate = useNavigate();
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const formFrameRef = useRef(null);
   let dataURL;
   const captureFrame = async () => {
+    setWhichDiv(1);
     console.log("capture get");
     const canvas = canvasRef.current;
     const video = videoRef.current;
@@ -109,8 +111,8 @@ function VideoCapture({ fileData, source }) {
               data-aos="zoom-in"
               data-aos-delay="200"
             >
-              
-                <div className="h-200 d-flex align-items-center justify-content-center">
+              <div className="h-200 d-flex align-items-center justify-content-center">
+                {whichDiv === 1 && (
                   <form
                     className="m-1"
                     ref={formFrameRef}
@@ -159,7 +161,8 @@ function VideoCapture({ fileData, source }) {
                       Save Frame
                     </button>
                   </form>
-                </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
