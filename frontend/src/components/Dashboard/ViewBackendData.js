@@ -44,7 +44,7 @@ export default function BackendViewData() {
         } else {
           console.log(response);
         }
-        // window.location.reload();
+        window.location.reload();
         alert("Deleted Successfully");
         setWhichDiv(0);
         setSelectedData(null);

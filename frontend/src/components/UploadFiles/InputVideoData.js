@@ -3,8 +3,9 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { Link } from "react-router-dom";
-import DisplayCard from "../Dashboard/DisplayCard";
+// import DisplayCard from "../Dashboard/DisplayCard";
 import Team from "../Team";
+import VideoCapture from "../UploadFiles/VideoCaptureFrame";
 
 function InputVideoData() {
   const [show, setShow] = useState(false);
@@ -97,7 +98,7 @@ function InputVideoData() {
 
           <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
-              <Modal.Title>Upload Source Data Here</Modal.Title>
+              <Modal.Title>Upload Source File Data </Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <Form>
@@ -142,11 +143,9 @@ function InputVideoData() {
           </Modal>
         </>
       ) : (
-        <DisplayCard
-          fileData={fileData}
-          source={source}
-          setShowInput={setShowInput}
-        />
+               
+          <VideoCapture fileData={fileData} source={source} setShowInput={setShowInput}/>
+       
       )}
     </>
   );
