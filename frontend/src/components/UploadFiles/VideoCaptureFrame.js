@@ -94,25 +94,25 @@ function VideoCapture({ fileData, source }) {
         </div>
       </section>
 
-      <section id="hero" className="d-flex align-items-center">
+      <section id="hero-frame" className="d-flex align-items-center">
         <div className="container">
           <div className="row">
             <div
-              className="col-lg-6 d-flex flex-column justify-content-center pt-0 pt-lg-0 order-2 order-lg-1"
+              className="col-lg-7 d-flex flex-column justify-content-center pt-0 pt-lg-0 order-2 order-lg-1"
               data-aos="fade-up"
               data-aos-delay="200"
             >
               <canvas ref={canvasRef} />
             </div>
             <div
-              className="col-lg-6 order-1 order-lg-2 hero-img"
+              className="col-lg-5 order-0 order-lg-2 "
               data-aos="zoom-in"
               data-aos-delay="200"
             >
-              <div className="row">
+              
                 <div className="h-200 d-flex align-items-center justify-content-center">
                   <form
-                    className="m-2"
+                    className="m-1"
                     ref={formFrameRef}
                     onSubmit={(event) => {
                       event.preventDefault();
@@ -160,7 +160,6 @@ function VideoCapture({ fileData, source }) {
                     </button>
                   </form>
                 </div>
-              </div>
             </div>
           </div>
         </div>
