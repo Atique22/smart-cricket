@@ -40,11 +40,12 @@ function VideoCapture({ fileData, source }) {
       formData.append("frameType", formFrameData.get("frameType"));
       formData.append("frameComment", formFrameData.get("frameComment"));
       formData.append("frameImage", dataURL);
-      console.log("data is :" + formData);
+      console.log("data is :" + JSON.stringify(formData));
       await axios
         .post("http://127.0.0.1:8000/training/", formData)
         .then()
         .then((data) => {
+          setWhichDiv(0);
           console.log("send data: " + data);
           alert("Frame data created successfully!");
           navigate("/BackendViewData");
