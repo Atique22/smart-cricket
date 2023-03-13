@@ -22,7 +22,7 @@ export default function AddFrameData() {
         console.error("Error:", error);
       });
     console.log(formData);
-    navigate("/BackendViewData");
+    navigate("/DisplayFramesData");
   };
 
   return (
@@ -32,7 +32,7 @@ export default function AddFrameData() {
           Create
         </button>
       </Link>
-      <Link to="/BackendViewData">
+      <Link to="/DisplayFramesData">
         <button type="button" className="btn m-2 btn-outline-success btn-lg">
           View
         </button>
