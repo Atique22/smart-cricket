@@ -50,89 +50,113 @@ export default function AddFrameData() {
             onSubmit={handleSubmit}
             onChange={formRef.current}
           >
-            <fieldset>
-              <div className="form-group ">
-                <label className="col-sm-2 control-label ">Name</label>
-                <div className="col-sm-10">
-                  <input
-                    // ref={a}
-                    name="Name"
-                    className="form-control"
-                    type="text"
-                    // value={name}
-                    // onChange={(event) => setName(event.target.value)}
-                    placeholder="enter name"
-                  />
-                </div>
-              </div>
-
-              <div className="form-group ">
-                <label className="col-sm-2 control-label ">Comment</label>
-
-                <div className="col-sm-10">
-                  <input
-                    name="Comment"
-                    className="form-control"
-                    type="text"
-                    // value={comments}
-                    // onChange={(event) => setComments(event.target.value)}
-                  />
-                </div>
-              </div>
-
+            <div className="card-body">
               <div className="form-group">
-                <label className="col-sm-2 control-label ">Frame</label>
-
-                <div className="col-sm-10">
-                  <input name="Frame" type="file" />
-                </div>
+                <input
+                  type="text"
+                  name="Name"
+                  className="form-control m-2"
+                  placeholder="Enter Name"
+                />
               </div>
-
-              <div className="form-group ">
-                <label className="col-sm-2 control-label ">Middle</label>
-
-                <div className="col-sm-10">
-                  <input
-                    name="Middle"
-                    className="form-control"
-                    type="number"
-                    defaultValue={0}
-                  />
-                </div>
+              <div className="form-group">
+                <input name="Frame" type="file" className="form-control m-2" />
               </div>
-
-              <div className="form-group ">
-                <label className="col-sm-2 control-label ">Edge</label>
-
-                <div className="col-sm-10">
-                  <input
-                    name="Edge"
-                    className="form-control"
-                    type="number"
-                    defaultValue={0}
-                  />
-                </div>
+              <div className="form-group">
+                <select
+                  className="form-control m-2"
+                  name="frameType"
+                  id="selectId"
+                >
+                  <option>Select Your Choice- Middle/Edge/Missed Ball </option>
+                  <option>Middle Ball</option>
+                  <option>Edge Ball</option>
+                  <option>Missed Ball </option>
+                </select>
               </div>
-
-              <div className="form-group ">
-                <label className="col-sm-2 control-label ">Missed</label>
-
-                <div className="col-sm-10">
-                  <input
-                    name="Missed"
-                    className="form-control"
-                    type="number"
-                    defaultValue={0}
-                  />
-                </div>
+              <div className="form-group">
+                <textarea
+                  name="Comment"
+                  className="form-control m-2"
+                  id="exampleFormControlTextarea1"
+                  rows="3"
+                  placeholder="Comment here!"
+                ></textarea>
               </div>
-
-              <div className="mt-2 form-actions">
-                <button className="btn btn-primary js-tooltip" type="submit">
-                  POST
-                </button>
+            </div>
+            {/*<div className="form-group ">
+              <label className="col-sm-2 control-label ">Name</label>
+              <div className="col-sm-10">
+                <input
+                  name="Name"
+                  className="form-control"
+                  type="text"
+                  placeholder="enter name"
+                />
               </div>
-            </fieldset>
+            </div>
+
+            <div className="form-group ">
+              <label className="col-sm-2 control-label ">Comment</label>
+
+              <div className="col-sm-10">
+                <input name="Comment" className="form-control" type="text" />
+              </div>
+            </div>
+
+            <div className="form-group">
+              <label className="col-sm-2 control-label ">Frame</label>
+
+              <div className="col-sm-10">
+                <input name="Frame" type="file" />
+              </div>
+            </div>
+
+            <div className="form-group ">
+              <label className="col-sm-2 control-label ">Middle</label>
+
+              <div className="col-sm-10">
+                <input
+                  name="Middle"
+                  className="form-control"
+                  type="number"
+                  defaultValue={0}
+                />
+              </div>
+            </div>
+
+            <div className="form-group ">
+              <label className="col-sm-2 control-label ">Edge</label>
+
+              <div className="col-sm-10">
+                <input
+                  name="Edge"
+                  className="form-control"
+                  type="number"
+                  defaultValue={0}
+                />
+              </div>
+            </div>
+
+            <div className="form-group ">
+              <label className="col-sm-2 control-label ">Missed</label>
+
+              <div className="col-sm-10">
+                <input
+                  name="Missed"
+                  className="form-control"
+                  type="number"
+                  defaultValue={0}
+                />
+              </div>
+            </div> */}
+
+            <button
+              type="submit"
+              className="btn btn-outline-primary btn-lg m-2"
+            >
+              Save Frame
+            </button>
           </form>
         </div>
       </div>

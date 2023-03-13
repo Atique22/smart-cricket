@@ -31,9 +31,9 @@ class TrainingList(ListAPIView):
             trainingDataName = request.POST.get('Name')
             trainingDataFrame = request.FILES.get('Frame')
             trainingDataComment = request.POST.get('Comment')
-            trainingDataMiddle = request.POST.get('Middle')
-            trainingDataEdge = request.POST.get('Edge')
-            trainingDataMissed = request.POST.get('Missed')
+            # trainingDataMiddle = request.POST.get('Middle')
+            # trainingDataEdge = request.POST.get('Edge')
+            # trainingDataMissed = request.POST.get('Missed')
 
             # from video capturing
 
@@ -41,10 +41,20 @@ class TrainingList(ListAPIView):
             frameType = request.POST.get('frameType')
             frameComment = request.POST.get('frameComment')
             frameImage = request.POST.get('frameImage')
+            md = 0
+            ed = 0
+            mi = 0
+            print(frameType)
+            if frameType == 'Middle Ball':
+                md = 1
+            if frameType == 'Edge Ball':
+                ed = 1
+            if frameType == 'Missed Ball':
+                mi = 1
 
             if trainingDataFrame:
                 trainingData = TrainingData(Name=trainingDataName, Frame=trainingDataFrame, Comment=trainingDataComment,
-                                            Middle=trainingDataMiddle, Edge=trainingDataEdge, Missed=trainingDataMissed)
+                                            Middle=md, Edge=ed, Missed=mi)
                 trainingData.save()
 
             if frameImage:
@@ -59,16 +69,7 @@ class TrainingList(ListAPIView):
 
                 # save the image to a file with the new filename
                 image.save(filename)
-                md = 0
-                ed = 0
-                mi = 0
-                print(frameType)
-                if frameType == 'Middle Ball':
-                    md = 1
-                if frameType == 'Edge Ball':
-                    ed = 1
-                if frameType == 'Missed Ball':
-                    mi = 1
+
                 # create a new Frame object and save it to the database
                 frame_data = TrainingData(Name=frameName,
                                           Comment=frameComment, Frame=filename, Middle=md, Edge=ed, Missed=mi)
