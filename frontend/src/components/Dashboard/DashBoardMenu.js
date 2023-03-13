@@ -57,7 +57,8 @@ function MenuDashBoard() {
                             </NavText> */}
             </NavItem>
           </NavItem>
-          <NavItem eventKey="charts">
+
+          {/* <NavItem eventKey="charts">
             <NavIcon>
               <Link to="/AddFrameData">
                 <AiFillFolder size="27" />
@@ -76,7 +77,7 @@ function MenuDashBoard() {
 
             <NavText>Video capturing</NavText>
             <NavItem> </NavItem>
-          </NavItem>
+          </NavItem> */}
         </SideNav.Nav>
       </SideNav>
     </>
