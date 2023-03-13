@@ -20,11 +20,10 @@ function VideoCapture({ fileData, source }) {
     console.log("capture at front page access:" + dataURL);
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
-
     canvas.getContext("2d").drawImage(video, 0, 0, canvas.width, canvas.height);
-    dataURL = canvas.toDataURL("image/jpeg");
   };
   async function sendFrameData() {
+    captureFrame();
     const formFrameData = new FormData(formFrameRef.current);
     console.log(formFrameRef);
     if (!formFrameData) {
