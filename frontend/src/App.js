@@ -10,9 +10,9 @@ import VideoCapture from "./components/Dashboard/VideoCaptureFrame";
 // import Contact from "./components/Contact";
 import Dashboard from "./components/Dashboard/Dashboard";
 import FileDataDisplay from "./components/UploadFiles/FileDataDisplay";
-import BackendViewData from "./components/Dashboard/ViewBackendData";
+import DisplayFramesData from "./components/Dashboard/DisplayFramesData";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import CreateBackendData from "./components/Dashboard/CreateBackendData";
+import AddFrameData from "./components/Dashboard/AddFrameData";
 
 function App() {
   return (
@@ -34,11 +34,10 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/video" element={<VideoCapture />} />
           <Route path="/FileDataDisplay" element={<FileDataDisplay />} />
-          <Route path="/BackendViewData" element={<BackendViewData />} />
-          <Route path="/CreateBackendData" element={<CreateBackendData />} />
+          <Route path="/DisplayFramesData" element={<DisplayFramesData />} />
+          <Route path="/AddFrameData" element={<AddFrameData />} />
         </Routes>
       </BrowserRouter>
-      {/* <Dashboard /> */}
     </>
   );
 }

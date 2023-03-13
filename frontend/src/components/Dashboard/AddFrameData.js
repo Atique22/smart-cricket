@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
-export default function CreateBackendData() {
+export default function AddFrameData() {
   const navigate = useNavigate();
   const formRef = useRef(null);
 
@@ -27,7 +27,7 @@ export default function CreateBackendData() {
 
   return (
     <div className="container">
-      <Link to="/CreateBackendData">
+      <Link to="/AddFrameData">
         <button type="button" className="btn m-2 btn-outline-primary btn-lg">
           Create
         </button>

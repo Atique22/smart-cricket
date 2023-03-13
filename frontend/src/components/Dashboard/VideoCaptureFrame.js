@@ -47,7 +47,7 @@ function VideoCapture({ fileData, source }) {
           setWhichDiv(0);
           console.log("send data: " + data);
           alert("Frame data created successfully!");
-          navigate("/BackendViewData");
+          navigate("/DisplayFramesData");
         });
     } catch (error) {
       console.error(error);

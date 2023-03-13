@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
-export default function BackendViewData() {
+export default function DisplayFramesData() {
   const navigate = useNavigate();
   const [trainingData, setTrainingData] = useState([]);
   const [editData, setEditData] = useState({});
@@ -48,7 +48,7 @@ export default function BackendViewData() {
         alert("Deleted Successfully");
         setWhichDiv(0);
         setSelectedData(null);
-        navigate("/BackendViewData");
+        navigate("/DisplayFramesData");
       })
       .catch((error) => {
         console.log("error occurs");
@@ -70,7 +70,7 @@ export default function BackendViewData() {
           console.log(response);
         }
         alert("Update Successfully");
-        navigate("/BackendViewData");
+        navigate("/DisplayFramesData");
       })
       .catch((error) => {
         console.log("error occurs");
@@ -95,7 +95,7 @@ export default function BackendViewData() {
     <div className="container">
       <div className="row">
         <div className="col-12">
-          <Link to="/CreateBackendData">
+          <Link to="/AddFrameData">
             <button
               type="button"
               className="btn m-2 btn-outline-primary btn-lg"
@@ -103,7 +103,7 @@ export default function BackendViewData() {
               Create
             </button>
           </Link>
-          <Link to="/BackendViewData">
+          <Link to="/DisplayFramesData">
             <button
               type="button"
               className="btn m-2 btn-outline-success btn-lg"

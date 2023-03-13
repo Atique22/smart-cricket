@@ -41,7 +41,7 @@ function MenuDashBoard() {
           </NavItem>
           <NavItem eventKey="charts">
             <NavIcon>
-              <Link to="/BackendViewData">
+              <Link to="/DisplayFramesData">
                 <AiFillFolder size="27" />
               </Link>
             </NavIcon>
@@ -59,7 +59,7 @@ function MenuDashBoard() {
           </NavItem>
           <NavItem eventKey="charts">
             <NavIcon>
-              <Link to="/CreateBackendData">
+              <Link to="/AddFrameData">
                 <AiFillFolder size="27" />
               </Link>
             </NavIcon>
