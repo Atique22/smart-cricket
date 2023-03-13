@@ -1,11 +1,11 @@
 # FYP---Project
 
-##frontend commands ->
+-frontend
 * cd frontend
 * npm install
 * npm start
 
-##backend commands-> 
+-backend
 * cd backend
 * pip install -r requirements.txt
 * python manage.py runserver
