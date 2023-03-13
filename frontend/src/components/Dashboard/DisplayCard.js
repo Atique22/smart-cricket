@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import CloseButton from "react-bootstrap/CloseButton";
 import Card from "react-bootstrap/Card";
-// import InputVideoData from '../UploadFiles/InputVideoData';
+// import DashboardBody from '../UploadFiles/DashboardBody';
 
 function DisplayCard({ fileData, source }) {
   const [showFrame, setShowFrame] = useState(false);

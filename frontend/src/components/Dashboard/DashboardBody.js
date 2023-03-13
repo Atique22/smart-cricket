@@ -5,9 +5,9 @@ import Modal from "react-bootstrap/Modal";
 import { Link } from "react-router-dom";
 // import DisplayCard from "../Dashboard/DisplayCard";
 import Team from "../Team";
-import VideoCapture from "../UploadFiles/VideoCaptureFrame";
+import VideoCapture from "./VideoCaptureFrame";
 
-function InputVideoData() {
+function DashboardBody() {
   const [show, setShow] = useState(false);
   const [showInput, setShowInput] = useState(false);
   const handleClose = () => setShow(false);
@@ -143,12 +143,14 @@ function InputVideoData() {
           </Modal>
         </>
       ) : (
-               
-          <VideoCapture fileData={fileData} source={source} setShowInput={setShowInput}/>
-       
+        <VideoCapture
+          fileData={fileData}
+          source={source}
+          setShowInput={setShowInput}
+        />
       )}
     </>
   );
 }
 
-export default InputVideoData;
+export default DashboardBody;
