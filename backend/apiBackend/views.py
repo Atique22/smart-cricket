@@ -31,9 +31,6 @@ class TrainingList(ListAPIView):
             trainingDataName = request.POST.get('Name')
             trainingDataFrame = request.FILES.get('Frame')
             trainingDataComment = request.POST.get('Comment')
-            # trainingDataMiddle = request.POST.get('Middle')
-            # trainingDataEdge = request.POST.get('Edge')
-            # trainingDataMissed = request.POST.get('Missed')
 
             # from video capturing
 

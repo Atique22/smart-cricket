@@ -6,12 +6,23 @@ import { Link } from "react-router-dom";
 // import DisplayCard from "../Dashboard/DisplayCard";
 import Team from "../Team";
 import VideoCapture from "./VideoCaptureFrame";
-
+import AddFrameData from "./AddFrameData";
 function DashboardBody() {
   const [show, setShow] = useState(false);
+  const [form, setForm] = useState(false);
+  const [btnText, setBtnText] = useState("Add Frame Data");
   const [showInput, setShowInput] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const handleStatusWork = () => {
+    if (form === true) {
+      setForm(false);
+      setBtnText("Add Frame Data");
+    } else {
+      setForm(true);
+      setBtnText("Capture From Video ");
+    }
+  };
   const [source, setSource] = React.useState();
   const [fileData, setFileData] = useState({
     fileName: "File Name Here",
@@ -63,6 +74,15 @@ function DashboardBody() {
                         Watch Video
                       </button>
                     </Link>
+                    <Link to="" className="m-3">
+                      <button
+                        onClick={handleStatusWork}
+                        type="button"
+                        className="btn btn-outline-primary btn-lg"
+                      >
+                        {btnText}
+                      </button>
+                    </Link>
                   </div>
                 </div>
                 <div
@@ -71,24 +91,28 @@ function DashboardBody() {
                   data-aos-delay="200"
                 >
                   <div className="row h-100 m-5">
-                    <div className="h-100 d-flex align-items-center justify-content-center">
-                      <button
-                        className="btn btn-outline-dark border-0"
-                        onClick={handleShow}
-                      >
-                        <div className="container-file">
-                          <h1>Upload Video </h1>
-                          <div className="upload-container">
-                            <div className="border-container">
-                              <p>
-                                Click here, upload file from
-                                <b> browse</b> your computer.
-                              </p>
+                    {form === false ? (
+                      <div className="h-100 d-flex align-items-center justify-content-center">
+                        <button
+                          className="btn btn-outline-dark border-0"
+                          onClick={handleShow}
+                        >
+                          <div className="container-file">
+                            <h1>Upload Video </h1>
+                            <div className="upload-container">
+                              <div className="border-container">
+                                <p>
+                                  Click here, upload file from
+                                  <b> browse</b> your computer.
+                                </p>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </button>
-                    </div>
+                        </button>
+                      </div>
+                    ) : (
+                      <AddFrameData />
+                    )}
                   </div>
                 </div>
               </div>
