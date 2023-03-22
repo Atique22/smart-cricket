@@ -105,6 +105,15 @@ class TrainingList(ListAPIView):
             updateMiddle = request.data.get('Middle')
             updateMissed = request.data.get('Missed')
             updateEdge = request.data.get('Edge')
+            # if updateMiddle == 1:
+            #     updateMissed = 0
+            #     updateEdge = 0
+            # elif updateMissed == 1:
+            #     updateMiddle = 0
+            #     updateEdge = 0
+            # elif updateEdge == 1:
+            #     updateMissed = 0
+            #     updateMiddle = 0
 
             print(updateName)
             if updateName:

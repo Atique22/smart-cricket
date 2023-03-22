@@ -210,6 +210,8 @@ export default function DisplayFramesData() {
                             <input
                               name="Middle"
                               type="number"
+                              min="0"
+                              max="1"
                               className="form-control"
                               value={editData.Middle}
                               onChange={(event) => {
@@ -226,6 +228,8 @@ export default function DisplayFramesData() {
                             <input
                               name="Missed"
                               type="number"
+                              min="0"
+                              max="1"
                               className="form-control"
                               value={editData.Missed}
                               onChange={(event) => {
@@ -242,6 +246,8 @@ export default function DisplayFramesData() {
                             <input
                               name="Edge"
                               type="number"
+                              min="0"
+                              max="1"
                               className="form-control"
                               value={editData.Edge}
                               onChange={(event) => {
