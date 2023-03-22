@@ -157,7 +157,7 @@ export default function DisplayFramesData() {
                     <img
                       src={selectedData.Frame}
                       alt={selectedData.Frame}
-                      height={600}
+                      height={400}
                     />
                     <ul className="list-group">
                       <form
