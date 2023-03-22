@@ -95,14 +95,6 @@ export default function DisplayFramesData() {
     <div className="container">
       <div className="row">
         <div className="col-12">
-          <Link to="/AddFrameData">
-            <button
-              type="button"
-              className="btn m-2 btn-outline-primary btn-lg"
-            >
-              Create
-            </button>
-          </Link>
           <Link to="/DisplayFramesData">
             <button
               type="button"
