@@ -267,7 +267,7 @@ export default function DisplayFramesData() {
               )}
               {/* /////////////////////////////////view table///////////////////////////////////// */}
               {whichDiv === 0 && (
-                <table className="table pt-5 text-light table-image">
+                <table className="table mt-5 text-light table-image">
                   <thead>
                     <tr>
                       <th scope="col">ID</th>
