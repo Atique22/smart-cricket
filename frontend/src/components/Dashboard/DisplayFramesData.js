@@ -70,6 +70,7 @@ export default function DisplayFramesData() {
         } else {
           console.log(response);
         }
+        window.location.reload();
         alert("Update Successfully");
         navigate("/DisplayFramesData");
       })
