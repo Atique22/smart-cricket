@@ -91,6 +91,17 @@ class TrainingList(ListAPIView):
             print(item.Name)
             updateName = request.data.get('Name')
             updateComment = request.data.get('Comment')
+            # frameType = request.data.get('frameStatus')
+            # md = 0
+            # ed = 0
+            # mi = 0
+            # print(frameType)
+            # if frameType == 'Middle Ball':
+            #     md = 1
+            # if frameType == 'Edge Ball':
+            #     ed = 1
+            # if frameType == 'Missed Ball':
+            #     mi = 1
             updateMiddle = request.data.get('Middle')
             updateMissed = request.data.get('Missed')
             updateEdge = request.data.get('Edge')

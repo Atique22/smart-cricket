@@ -49,7 +49,12 @@ nav ul li {
   height: 50vh;
   background: #404142;
 }
-
+#hero-display-table{
+  width: 100%;
+  height: 100%;
+  background: #262729;
+  text-decoration-color: white;
+}
 #hero h1 {
   margin: 0 0 10px 0;
   font-size: 48px;

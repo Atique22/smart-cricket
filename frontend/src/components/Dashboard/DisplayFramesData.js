@@ -92,264 +92,261 @@ export default function DisplayFramesData() {
   }, []);
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-12">
-          <Link to="/DisplayFramesData">
-            <button
-              type="button"
-              className="btn m-2 btn-outline-success btn-lg"
-            >
-              View
-            </button>
-          </Link>
-          <Link to="/dashboard">
-            <button
-              type="button"
-              className="btn m-2 btn-outline-warning btn-lg"
-            >
-              Go to Dashboard
-            </button>
-          </Link>
-
-          {/* /////////////////////////////////view frame ///////////////////////////////////// */}
-          {whichDiv === 1 && (
-            <div className="modal-overlay m-4">
-              <div className="modal-content">
-                <button
-                  className="btn btn-outline-danger rounded-0"
-                  onClick={handleClose}
-                >
-                  Close view
-                </button>
-                <img
-                  src={selectedData.Frame}
-                  alt={selectedData.Frame}
-                  height={600}
-                />
-                <ul className="list-group">
-                  <li className="list-group-item">Date: {selectedData.Date}</li>
-                  <li className="list-group-item">
-                    {" "}
-                    Name: {selectedData.Name}
-                  </li>
-                  <li className="list-group-item">
-                    Comment: {selectedData.Comment}
-                  </li>
-                  <li className="list-group-item">
-                    Middle: {selectedData.Middle}
-                  </li>
-                  <li className="list-group-item">
-                    {" "}
-                    Missed: {selectedData.Edge}
-                  </li>
-                  <li className="list-group-item">
-                    {" "}
-                    Edge: {selectedData.Missed}
-                  </li>
-                </ul>
-              </div>
-              <div></div>
-            </div>
-          )}
-          {/* /////////////////////////////////UPDATE EDIT frame ///////////////////////////////////// */}
-          {whichDiv === 2 && (
-            <div className="modal-overlay m-4">
-              <div className="modal-content">
-                <button
-                  className="btn btn-outline-danger rounded-0"
-                  onClick={handleClose}
-                >
-                  Close Update
-                </button>
-                <img
-                  src={selectedData.Frame}
-                  alt={selectedData.Frame}
-                  height={600}
-                />
-                <ul className="list-group">
-                  <form
-                    className="border"
-                    onSubmit={(event) => {
-                      event.preventDefault();
-                      handleUpdate(editData);
-                    }}
+    <section
+      id="hero-display-table"
+      className="p-2 text-white align-items-center"
+    >
+      <Link to="/dashboard">
+        <button type="button" className="btn m-2 btn-outline-warning btn-lg">
+          Go to Dashboard
+        </button>
+      </Link>
+      <div className="container">
+        <div className="row">
+          <div className="col-12">
+            {/* /////////////////////////////////view frame ///////////////////////////////////// */}
+            {whichDiv === 1 && (
+              <div className="modal-overlay m-4">
+                <div className="modal-content">
+                  <button
+                    className="btn btn-outline-danger rounded-0"
+                    onClick={handleClose}
                   >
-                    <li className="list-group-item  border-0">
-                      Date: {editData.Date}
+                    Close view
+                  </button>
+                  <img
+                    src={selectedData.Frame}
+                    alt={selectedData.Frame}
+                    height={600}
+                  />
+                  <ul className="list-group">
+                    <li className="list-group-item">
+                      Date: {selectedData.Date}
                     </li>
-
-                    <li className="list-group-item border-0">
+                    <li className="list-group-item">
                       {" "}
-                      Name:
-                      <input
-                        name="Name"
-                        type="text"
-                        className="form-control "
-                        value={editData.Name}
-                        onChange={(event) => {
-                          setEditData({
-                            ...editData,
-                            Name: event.target.value,
-                          });
-                        }}
-                      />
+                      Name: {selectedData.Name}
                     </li>
-                    <li className="list-group-item border-0">
-                      Comment:{" "}
-                      <input
-                        name="Comment"
-                        type="text"
-                        className="form-control"
-                        row="3"
-                        value={editData.Comment}
-                        onChange={(event) => {
-                          setEditData({
-                            ...editData,
-                            Comment: event.target.value,
-                          });
-                        }}
-                      />
+                    <li className="list-group-item">
+                      Comment: {selectedData.Comment}
                     </li>
-                    <li className="list-group-item border-0">
-                      Middle:{" "}
-                      <input
-                        name="Middle"
-                        type="number"
-                        className="form-control"
-                        value={editData.Middle}
-                        onChange={(event) => {
-                          setEditData({
-                            ...editData,
-                            Middle: event.target.value,
-                          });
-                        }}
-                      />
+                    <li className="list-group-item">
+                      Middle: {selectedData.Middle}
                     </li>
-                    <li className="list-group-item border-0">
+                    <li className="list-group-item">
                       {" "}
-                      Missed:{" "}
-                      <input
-                        name="Missed"
-                        type="number"
-                        className="form-control"
-                        value={editData.Missed}
-                        onChange={(event) => {
-                          setEditData({
-                            ...editData,
-                            Missed: event.target.value,
-                          });
-                        }}
-                      />
+                      Missed: {selectedData.Edge}
                     </li>
-                    <li className="list-group-item border-0">
+                    <li className="list-group-item">
                       {" "}
-                      Edge:{" "}
-                      <input
-                        name="Edge"
-                        type="number"
-                        className="form-control"
-                        value={editData.Edge}
-                        onChange={(event) => {
-                          setEditData({
-                            ...editData,
-                            Edge: event.target.value,
-                          });
-                        }}
-                      />
+                      Edge: {selectedData.Missed}
                     </li>
-                    <li className="list-group-item border-0">
-                      <button type="submit" className="btn btn-primary">
-                        Update
-                      </button>
-                    </li>
-                  </form>
-                </ul>
+                  </ul>
+                </div>
+                <div></div>
               </div>
-              <div></div>
-            </div>
-          )}
-          {/* /////////////////////////////////view table///////////////////////////////////// */}
-          {whichDiv === 0 && (
-            <table className="table table-image">
-              <thead>
-                <tr>
-                  <th scope="col">ID</th>
-                  <th scope="col">Frame</th>
-                  <th scope="col">Date</th>
-                  <th scope="col" className="text-truncate">
-                    Name
-                  </th>
-                  <th scope="col" className="text-truncate">
-                    comments
-                  </th>
+            )}
+            {/* /////////////////////////////////UPDATE EDIT frame ///////////////////////////////////// */}
+            {whichDiv === 2 && (
+              <div className="modal-overlay m-4">
+                <div className="modal-content">
+                  <button
+                    className="btn btn-outline-danger rounded-0"
+                    onClick={handleClose}
+                  >
+                    Close Update
+                  </button>
+                  <img
+                    src={selectedData.Frame}
+                    alt={selectedData.Frame}
+                    height={600}
+                  />
+                  <ul className="list-group">
+                    <form
+                      className="border"
+                      onSubmit={(event) => {
+                        event.preventDefault();
+                        handleUpdate(editData);
+                      }}
+                    >
+                      <li className="list-group-item  border-0">
+                        Date: {editData.Date}
+                      </li>
 
-                  <th scope="col">Middle</th>
-                  <th scope="col">Edge</th>
-                  <th scope="col">Missed</th>
-                  <th scope="col"></th>
-                  <th scope="col"></th>
-                  <th scope="col"></th>
-                </tr>
-              </thead>
-              <tbody>
-                {trainingData.map((trainingData, index) => {
-                  return (
-                    <tr key={index}>
-                      <th scope="row">{trainingData.id}</th>
-                      <td className="w-25">
-                        <img
-                          src={trainingData.Frame}
-                          className="img-fluid img-thumbnail"
-                          alt="Frame AI"
-                          onClick={() => handleOpen(trainingData, 1)}
+                      <li className="list-group-item border-0">
+                        {" "}
+                        Name:
+                        <input
+                          name="Name"
+                          type="text"
+                          className="form-control "
+                          value={editData.Name}
+                          onChange={(event) => {
+                            setEditData({
+                              ...editData,
+                              Name: event.target.value,
+                            });
+                          }}
                         />
-                      </td>
-                      <td className=" text-truncate">{trainingData.Date}</td>
-                      <td className="text-truncate">{trainingData.Name}</td>
-                      <td className="text-truncate">{trainingData.Comment}</td>
-                      <td>{trainingData.Middle}</td>
-                      <td>{trainingData.Edge}</td>
-                      <td>{trainingData.Missed}</td>
-                      <td>
-                        <button
-                          type="button"
-                          className="btn btn-outline-secondary"
-                          onClick={() => {
-                            handleOpen(trainingData, 2);
+                      </li>
+                      <li className="list-group-item border-0">
+                        Comment:{" "}
+                        <input
+                          name="Comment"
+                          type="text"
+                          className="form-control"
+                          row="3"
+                          value={editData.Comment}
+                          onChange={(event) => {
+                            setEditData({
+                              ...editData,
+                              Comment: event.target.value,
+                            });
                           }}
-                        >
-                          Edit
-                        </button>
-                      </td>
-                      <td>
-                        <button
-                          type="button"
-                          className="btn btn-outline-success"
-                          onClick={() => handleOpen(trainingData, 1)}
-                        >
-                          View
-                        </button>
-                      </td>
-                      <td>
-                        <button
-                          type="button"
-                          className="btn btn-outline-danger"
-                          onClick={() => {
-                            handleDelete(trainingData.id);
+                        />
+                      </li>
+                      <li className="list-group-item border-0">
+                        Middle:{" "}
+                        <input
+                          name="Middle"
+                          type="number"
+                          className="form-control"
+                          value={editData.Middle}
+                          onChange={(event) => {
+                            setEditData({
+                              ...editData,
+                              Middle: event.target.value,
+                            });
                           }}
-                        >
-                          Delete
+                        />
+                      </li>
+                      <li className="list-group-item border-0">
+                        {" "}
+                        Missed:{" "}
+                        <input
+                          name="Missed"
+                          type="number"
+                          className="form-control"
+                          value={editData.Missed}
+                          onChange={(event) => {
+                            setEditData({
+                              ...editData,
+                              Missed: event.target.value,
+                            });
+                          }}
+                        />
+                      </li>
+                      <li className="list-group-item border-0">
+                        {" "}
+                        Edge:{" "}
+                        <input
+                          name="Edge"
+                          type="number"
+                          className="form-control"
+                          value={editData.Edge}
+                          onChange={(event) => {
+                            setEditData({
+                              ...editData,
+                              Edge: event.target.value,
+                            });
+                          }}
+                        />
+                      </li>
+                      <li className="list-group-item border-0">
+                        <button type="submit" className="btn btn-primary">
+                          Update
                         </button>
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          )}
+                      </li>
+                    </form>
+                  </ul>
+                </div>
+                <div></div>
+              </div>
+            )}
+            {/* /////////////////////////////////view table///////////////////////////////////// */}
+            {whichDiv === 0 && (
+              <table className="table text-light table-image">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Frame</th>
+                    <th scope="col">Date</th>
+                    <th scope="col" className="text-truncate">
+                      Name
+                    </th>
+                    <th scope="col" className="text-truncate">
+                      comments
+                    </th>
+
+                    <th scope="col">Middle</th>
+                    <th scope="col">Edge</th>
+                    <th scope="col">Missed</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {trainingData.map((trainingData, index) => {
+                    return (
+                      <tr key={index}>
+                        <th scope="row">{trainingData.id}</th>
+                        <td className="w-25">
+                          <img
+                            src={trainingData.Frame}
+                            className="img-fluid img-thumbnail"
+                            alt="Frame AI"
+                            onClick={() => handleOpen(trainingData, 1)}
+                          />
+                        </td>
+                        <td className=" text-truncate">{trainingData.Date}</td>
+                        <td className="text-truncate">{trainingData.Name}</td>
+                        <td className="text-truncate">
+                          {trainingData.Comment}
+                        </td>
+                        <td>{trainingData.Middle}</td>
+                        <td>{trainingData.Edge}</td>
+                        <td>{trainingData.Missed}</td>
+                        <td>
+                          <button
+                            type="button"
+                            className="btn btn-outline-secondary"
+                            onClick={() => {
+                              handleOpen(trainingData, 2);
+                            }}
+                          >
+                            Edit
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            type="button"
+                            className="btn btn-outline-success"
+                            onClick={() => handleOpen(trainingData, 1)}
+                          >
+                            View
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            type="button"
+                            className="btn btn-outline-danger"
+                            onClick={() => {
+                              handleDelete(trainingData.id);
+                            }}
+                          >
+                            Delete
+                          </button>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
