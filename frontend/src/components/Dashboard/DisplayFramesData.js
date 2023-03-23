@@ -1,9 +1,9 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Footer from "../../components/Footer";
-import Navbar from "../../components/Navbar";
+import MenuDashBoard from "../Dashboard/DashBoardMenu";
 export default function DisplayFramesData() {
   const navigate = useNavigate();
   const [trainingData, setTrainingData] = useState([]);
@@ -95,10 +95,11 @@ export default function DisplayFramesData() {
 
   return (
     <>
-      <Navbar />
-      <section
+     <MenuDashBoard />
+      <div className=" align-items-center justify-content-center ">
+        <section
         id="hero-display-table"
-        className="p-2 mt-5 text-white align-items-center"
+        className="p-2 text-white align-items-center"
       >
         <div className="container">
           <div className="row">
@@ -359,7 +360,8 @@ export default function DisplayFramesData() {
           </div>
         </div>
       </section>
-      <Footer />
+      <Footer/>
+      </div>
     </>
   );
 }
