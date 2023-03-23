@@ -6,7 +6,7 @@ import Home from "./components/Home";
 import Team from "./components/Team";
 import Footer from "./components/Footer";
 import VideoCapture from "./components/Dashboard/VideoCaptureFrame";
-
+import LineGraph from "./components/Charts/HighChartPie"
 // import Contact from "./components/Contact";
 import Dashboard from "./components/Dashboard/Dashboard";
 import FileDataDisplay from "./components/UploadFiles/FileDataDisplay";
@@ -36,6 +36,7 @@ function App() {
           <Route path="/FileDataDisplay" element={<FileDataDisplay />} />
           <Route path="/DisplayFramesData" element={<DisplayFramesData />} />
           <Route path="/AddFrameData" element={<AddFrameData />} />
+          <Route path="/graph" element={<LineGraph />} />
         </Routes>
       </BrowserRouter>
     </>

@@ -13,8 +13,8 @@ export default function HighChartPie (){
           type: 'pie'
         },
         title: {
-          text: 'Browser market shares in May, 2020',
-          align: 'left'
+          text: 'Tracking Cricket Data',
+          align: 'center'
         },
         tooltip: {
           pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -35,37 +35,17 @@ export default function HighChartPie (){
           }
         },
         series: [{
-          name: 'Brands',
-          colorByPoint: true,
           data: [{
-            name: 'Chrome',
-            y: 70.67,
+            name: 'Middle',
+            y: 6,
             sliced: true,
             selected: true
           }, {
             name: 'Edge',
-            y: 14.77
+            y: 3
           },  {
-            name: 'Firefox',
-            y: 4.86
-          }, {
-            name: 'Safari',
-            y: 2.63
-          }, {
-            name: 'Internet Explorer',
-            y: 1.53
-          },  {
-            name: 'Opera',
-            y: 1.40
-          }, {
-            name: 'Sogou Explorer',
-            y: 0.84
-          }, {
-            name: 'QQ',
-            y: 0.51
-          }, {
-            name: 'Other',
-            y: 2.6
+            name: 'Missed',
+            y: 2
           }]
         }]
       };
