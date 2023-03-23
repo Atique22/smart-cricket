@@ -167,6 +167,7 @@ function VideoCapture({ fileData, source }) {
           </div>
         </div>
       </section>
+      
     </div>
   );
 }
