@@ -10,6 +10,9 @@ export default function DisplayFramesData() {
   const [trainingData, setTrainingData] = useState([]);
   const [editData, setEditData] = useState({});
   const [whichDiv, setWhichDiv] = useState(0);
+  let totalMiddle = 0;
+  let totalMiss =0;
+  let totalEdge =0;
   const [selectedData, setSelectedData] = useState({});
 
   const handleOpen = (data, divNo) => {
@@ -299,8 +302,15 @@ export default function DisplayFramesData() {
                   </thead>
                   <tbody>
                     {trainingData.map((trainingData, index) => {
+                       totalMiddle=totalMiddle+trainingData.Middle
+                       totalMiss=totalMiss+trainingData.Missed
+                       totalEdge=totalEdge+trainingData.Edge
+                        // setTotalMiddle(totalMiddle=totalMiddle+trainingData.Middle)
+                        // setTotalMiss(totalMiss=totalMiss+trainingData.Missed)
+                        // setTotalEdge(totalEdge=totalEdge+trainingData.Edge)
                       return (
                         <tr key={index}>
+                          
                           <th scope="row">{trainingData.id}</th>
                           <td className="w-25">
                             <img
