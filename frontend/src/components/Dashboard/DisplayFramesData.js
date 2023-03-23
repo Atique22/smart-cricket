@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Footer from "../../components/Footer";
 import MenuDashBoard from "../Dashboard/DashBoardMenu";
+import Team from "../Team";
 export default function DisplayFramesData() {
   const navigate = useNavigate();
   const [trainingData, setTrainingData] = useState([]);
@@ -360,6 +361,7 @@ export default function DisplayFramesData() {
           </div>
         </div>
       </section>
+      <Team/>
       <Footer/>
       </div>
     </>
