@@ -1,12 +1,16 @@
-import React from "react";
+import { React, useState } from "react";
 import MenuDashBoard from "./DashBoardMenu";
 import Team from "../Team";
 import Footer from "../Footer";
-// import HighChartPie from "../Charts/HighChartPie";
+import HighChartPie from "../Charts/HighChartPie";
 import HighChartReact from "../Charts/HighChartReact";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const GraphDashboard = () => {
+  const [show, setShow] = useState(true);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     //  ======= GraphDashboard =======
     <>
@@ -27,22 +31,21 @@ const GraphDashboard = () => {
                   differents tools....
                 </h2>
                 <div className="d-flex justify-content-center justify-content-lg-start">
-                  <Link to="" className="m-3">
-                    <button
-                      type="button"
-                      className="btn btn-outline-secondary btn-lg"
-                    >
-                      Pie Chart
-                    </button>
-                  </Link>
-                  <Link to="" className="m-3">
-                    <button
-                      type="button"
-                      className="btn btn-outline-secondary btn-lg"
-                    >
-                      Line Graph
-                    </button>
-                  </Link>
+                  <button
+                    type="button"
+                    onClick={handleShow}
+                    className="btn m-2 btn-outline-secondary btn-lg"
+                  >
+                    Pie Chart
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={handleClose}
+                    className="btn m-2 btn-outline-secondary btn-lg"
+                  >
+                    Line Graph
+                  </button>
                 </div>
               </div>
               <div
@@ -50,8 +53,7 @@ const GraphDashboard = () => {
                 data-aos="zoom-in"
                 data-aos-delay="200"
               >
-                {/* <HighChartPie /> */}
-                <HighChartReact />
+                {show === true ? <HighChartPie /> : <HighChartReact />}
               </div>
             </div>
           </div>
