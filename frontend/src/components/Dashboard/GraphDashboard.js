@@ -6,7 +6,7 @@ import HighChartPie from "../Charts/HighChartPie";
 import LineGraph from "../Charts/LineGraph";
 // import { Link } from "react-router-dom";
 
-const GraphDashboard = () => {
+const GraphDashboard = (props) => {
   const [show, setShow] = useState(true);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -54,9 +54,17 @@ const GraphDashboard = () => {
                 data-aos-delay="200"
               >
                 {show === true ? (
-                  <HighChartPie middle={2} edge={4} missed={7} />
+                  <HighChartPie
+                    middle={props.middle}
+                    edge={props.edge}
+                    missed={props.missed}
+                  />
                 ) : (
-                  <LineGraph middle={2} edge={4} missed={7} />
+                  <LineGraph
+                    middle={props.middle}
+                    edge={props.edge}
+                    missed={props.missed}
+                  />
                 )}
               </div>
             </div>
