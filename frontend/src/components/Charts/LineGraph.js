@@ -2,7 +2,7 @@ import React from "react";
 import HighCharts from "highcharts";
 import HighChartsReact from "highcharts-react-official";
 
-export default function LineGraph() {
+export default function LineGraph(props) {
   const options = {
     chart: {
       type: "column",
@@ -51,15 +51,15 @@ export default function LineGraph() {
         data: [
           {
             name: "Middle",
-            y: 63.06,
+            y: props.middle,
           },
           {
             name: "Edge",
-            y: 19.84,
+            y: props.edge,
           },
           {
             name: "Missed",
-            y: 4.18,
+            y: props.missed,
           },
         ],
       },

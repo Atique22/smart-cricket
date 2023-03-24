@@ -53,7 +53,11 @@ const GraphDashboard = () => {
                 data-aos="zoom-in"
                 data-aos-delay="200"
               >
-                {show === true ? <HighChartPie /> : <LineGraph />}
+                {show === true ? (
+                  <HighChartPie middle={2} edge={4} missed={7} />
+                ) : (
+                  <LineGraph middle={2} edge={4} missed={7} />
+                )}
               </div>
             </div>
           </div>
