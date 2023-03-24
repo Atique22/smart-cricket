@@ -46,13 +46,13 @@ function MenuDashBoard() {
               </Link>
             </NavIcon>
             <NavText>Frames Capture</NavText>
-           <NavItem eventKey="charts/linechart">
+            <NavItem eventKey="charts/linechart">
               {/* <NavText>
                                 Line Chart
                             </NavText> */}
             </NavItem>
           </NavItem>
-          <NavItem eventKey="charts">
+          {/* <NavItem eventKey="charts">
               <NavIcon>
                 <Link to="/graph">
                   <AiFillFolder size="27" />
@@ -60,7 +60,7 @@ function MenuDashBoard() {
               </NavIcon>
               <NavText> Graph </NavText>
               <NavItem eventKey="charts/linechart"></NavItem>
-          </NavItem>
+          </NavItem> */}
           {/* <NavItem eventKey="charts">
             <NavIcon>
               <Link to="/AddFrameData">
