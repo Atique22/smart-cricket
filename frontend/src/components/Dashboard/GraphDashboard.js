@@ -3,7 +3,7 @@ import MenuDashBoard from "./DashBoardMenu";
 import Team from "../Team";
 import Footer from "../Footer";
 import HighChartPie from "../Charts/HighChartPie";
-import HighChartReact from "../Charts/HighChartReact";
+import LineGraph from "../Charts/LineGraph";
 // import { Link } from "react-router-dom";
 
 const GraphDashboard = () => {
@@ -53,7 +53,7 @@ const GraphDashboard = () => {
                 data-aos="zoom-in"
                 data-aos-delay="200"
               >
-                {show === true ? <HighChartPie /> : <HighChartReact />}
+                {show === true ? <HighChartPie /> : <LineGraph />}
               </div>
             </div>
           </div>
