@@ -11,9 +11,15 @@ export default function DisplayFramesData() {
   const [trainingData, setTrainingData] = useState([]);
   const [editData, setEditData] = useState({});
   const [whichDiv, setWhichDiv] = useState(0);
+  let [totalMiddle, setTotalMiddle] = useState(0);
+  let [totalMiss, setTotalMiss] = useState(0);
+  let [totalEdge, setTotalEdge] = useState(0);
   const [showGraph, setShowGraph] = useState(true);
   const [btnText, setBtnText] = useState("Build Your Own Graph Chart");
   const handleStatusWork = () => {
+    setTotalMiddle(totalMiddle);
+    setTotalMiss(totalMiss);
+    setTotalEdge(totalEdge);
     if (showGraph === true) {
       setShowGraph(false);
       setBtnText("Frames Data");
@@ -22,9 +28,6 @@ export default function DisplayFramesData() {
       setBtnText("Build Your Own Graph Chart");
     }
   };
-  let totalMiddle = 2;
-  let totalMiss = 3;
-  let totalEdge = 6;
   const [selectedData, setSelectedData] = useState({});
 
   const handleOpen = (data, divNo) => {
