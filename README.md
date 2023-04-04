@@ -4,14 +4,14 @@
 
 -frontend
 ```
-* cd frontend
-* npm install
-* npm start
+ cd frontend
+ npm install
+ npm start
 ```
 
 -backend
 ```
-* cd backend
-* pip install -r requirements.txt
-* python manage.py runserver
+ cd backend
+ pip install -r requirements.txt
+ python manage.py runserver
 ```
