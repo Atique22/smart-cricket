@@ -79,18 +79,6 @@ class TrainingList(ListAPIView):
                 results = model(filename_vide_img)
                 print("result is :"+str(results))
                 results.save()
-                # create a new Frame object and save it to the database
-                # image_path = '../runs/detect/exp'
-                # # Create the directory if it does not exist
-                # if not os.path.exists(image_path):
-                #     os.makedirs(image_path)
-                # with open(image_path, 'rb') as f:
-                #     image_data = f.read()
-                # full_path = os.path.join(image_path, filename_vide_img)
-                # # save the image to the file
-                # with open(full_path, 'wb') as f:
-                #     f.write(image_data)
-                # print("BASE_DIR: "+str(BASE_DIR))
                 frame_data = TrainingData(Name=frame_name,
                                           Comment=frame_comment, Frame=filename_vide_img, Middle=md, Edge=ed, Missed=mi)
                 frame_data.save()
