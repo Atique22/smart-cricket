@@ -11,3 +11,4 @@ class TrainingData(models.Model):
     Missed = models.IntegerField(default=0)
 
 
+
