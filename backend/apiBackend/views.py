@@ -45,27 +45,26 @@ class TrainingList(ListAPIView):
 
     def post(self, request, *args, **kwargs):
         if request.method == 'POST':
-            #from images frame 
-            
-            trainingDataName = request.POST.get('Name')
-            trainingDataComment = request.POST.get('Comment')
+            # Get training data from form
+            training_data_name = request.POST.get('Name')
+            training_data_comment = request.POST.get('Comment')
             # from video capturing
-            frameName = request.POST.get('frameName')
-            frameType = request.POST.get('frameType')
-            frameComment = request.POST.get('frameComment')
-            frameImage = request.POST.get('frameImage')
-            md = 0
-            ed = 0
-            mi = 0
-            print(frameType)
-            if frameType == 'Middle Ball':
-                md = 1
-            if frameType == 'Edge Ball':
-                ed = 1
-            if frameType == 'Missed Ball':
-                mi = 1
+            frame_name = request.POST.get('frameName')
+            frame_type = request.POST.get('frameType')
+            frame_comment = request.POST.get('frameComment')
+            frame_image = request.POST.get('frameImage')
 
-            if trainingDataName:
+            # Get frame data from video capture
+            md, ed, mi = 0, 0, 0
+            if frame_type == 'Middle Ball':
+                md = 1
+            elif frame_type == 'Edge Ball':
+                ed = 1
+            elif frame_type == 'Missed Ball':
+                mi = 1
+        
+
+            if 'Frame' in request.FILES:
                 im_bytes = request.FILES['Frame'].read()
                 timestamp = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
                 filename_img = f'frame_{timestamp}.jpg'
@@ -75,14 +74,14 @@ class TrainingList(ListAPIView):
                 results = model(filename_img)
                 print("result is :"+str(results))
                 results.save("result.png")
-                trainingData = TrainingData(Name=trainingDataName, Frame=filename_img, Comment=trainingDataComment,
+                trainingData = TrainingData(Name=training_data_name, Frame=filename_img, Comment=training_data_comment,
                                             Middle=md, Edge=ed, Missed=mi)
                 trainingData.save()
 
-            if frameImage:
+            if 'frameImage' in request.POST:
                 # decode the base64 image data into bytes
                 # remove the "data:image/jpeg;base64," prefix
-                data = frameImage.split(',')[1]
+                data = frame_image.split(',')[1]
                 image_bytes = base64.b64decode(data)
                 image = Image.open(BytesIO(image_bytes))
                 # generate a new filename based on the current timestamp
@@ -94,8 +93,8 @@ class TrainingList(ListAPIView):
                 print("result is :"+str(results))
                 results.save("result.png")
                 # create a new Frame object and save it to the database
-                frame_data = TrainingData(Name=frameName,
-                                          Comment=frameComment, Frame=filename_vide_img, Middle=md, Edge=ed, Missed=mi)
+                frame_data = TrainingData(Name=frame_name,
+                                          Comment=frame_comment, Frame=filename_vide_img, Middle=md, Edge=ed, Missed=mi)
                 frame_data.save()
 
             return JsonResponse({'message': 'trainingData created successfully'})
