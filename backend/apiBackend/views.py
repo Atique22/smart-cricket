@@ -19,19 +19,6 @@ from io import BytesIO
 from PIL import Image
 
 model =  torch.hub.load('yolov5','custom', path='yolov5/runs/train/exp/weights/best.pt', force_reload=True, source='local');
-# @csrf_exempt
-# def detect(request):
-#     if request.method == 'POST':
-#         im_bytes = request.FILES['image'].read()
-#         im_file = BytesIO(im_bytes)
-#         image = Image.open(im_file)
-#         image.save('my_image.png')
-#         results = model("my_image.png")
-#         results.save("result.png")
-#         # Render the response with the base64 image
-        
-
-
 
 
 class TrainingList(ListAPIView):
@@ -73,7 +60,7 @@ class TrainingList(ListAPIView):
                 image.save(filename_img)
                 results = model(filename_img)
                 print("result is :"+str(results))
-                results.save("result.png")
+                results.save()
                 trainingData = TrainingData(Name=training_data_name, Frame=filename_img, Comment=training_data_comment,
                                             Middle=md, Edge=ed, Missed=mi)
                 trainingData.save()
@@ -91,8 +78,19 @@ class TrainingList(ListAPIView):
                 image.save(filename_vide_img)
                 results = model(filename_vide_img)
                 print("result is :"+str(results))
-                results.save("result.png")
+                results.save()
                 # create a new Frame object and save it to the database
+                # image_path = '../runs/detect/exp'
+                # # Create the directory if it does not exist
+                # if not os.path.exists(image_path):
+                #     os.makedirs(image_path)
+                # with open(image_path, 'rb') as f:
+                #     image_data = f.read()
+                # full_path = os.path.join(image_path, filename_vide_img)
+                # # save the image to the file
+                # with open(full_path, 'wb') as f:
+                #     f.write(image_data)
+                # print("BASE_DIR: "+str(BASE_DIR))
                 frame_data = TrainingData(Name=frame_name,
                                           Comment=frame_comment, Frame=filename_vide_img, Middle=md, Edge=ed, Missed=mi)
                 frame_data.save()
