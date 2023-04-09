@@ -1,0 +1,13 @@
+names:
+- ball
+- bat
+nc: 2
+roboflow:
+  license: CC BY 4.0
+  project: final-year-project-drtgi
+  url: https://universe.roboflow.com/mirza-mukkaram-baig/final-year-project-drtgi/dataset/4
+  version: 4
+  workspace: mirza-mukkaram-baig
+test: ../test/images
+train: Final-Year-Project-4/train/images
+val: Final-Year-Project-4/valid/images
