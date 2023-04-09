@@ -15,3 +15,9 @@
  pip install -r requirements.txt
  python manage.py runserver
 ```
+-ML
+```
+cd yolov5
+pip install -r requirements.txt
+```
+
