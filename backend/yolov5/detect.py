@@ -68,7 +68,7 @@ def run(
         nosave=False,  # do not save images/videos
         classes=None,  # filter by class: --class 0, or --class 0 2 3
         agnostic_nms=False,  # class-agnostic NMS
-        augment=False,  # augmented inference
+        augment=False,  # augmented inference 
         visualize=False,  # visualize features
         update=False,  # update all models
         exist_ok=False,  # existing project/name ok, do not increment

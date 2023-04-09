@@ -58,7 +58,7 @@ class TrainingList(ListAPIView):
                 im_file = BytesIO(im_bytes)
                 image = Image.open(im_file)
                 image.save(filename_img)
-                results = model(filename_img)
+                results = model(filename_img, '../runs')
                 print("result is :"+str(results))
                 results.save()
                 trainingData = TrainingData(Name=training_data_name, Frame=filename_img, Comment=training_data_comment,
