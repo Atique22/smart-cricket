@@ -147,7 +147,7 @@ export default function DisplayFramesData() {
                           <img
                             src={selectedData.Frame}
                             alt={selectedData.Frame}
-                            height={600}
+                            height={900}
                           />
                           <ul className="list-group">
                             <li className="list-group-item">
@@ -189,7 +189,7 @@ export default function DisplayFramesData() {
                           <img
                             src={selectedData.Frame}
                             alt={selectedData.Frame}
-                            height={400}
+                            height={900}
                           />
                           <ul className="list-group">
                             <form
