@@ -57,7 +57,7 @@ class TrainingList(ListAPIView):
                 im_file = BytesIO(im_bytes)
                 image = Image.open(im_file)
                 image.save(filename_img)
-                results = model(filename_img, '../runs')
+                results = model(filename_img)
                 print("result is :"+str(results))
                 # results.save()
                 results.my_saver()
@@ -108,7 +108,7 @@ class TrainingList(ListAPIView):
             updateEdge = request.data.get('Edge')
 
             print(updateName)
-            if updateName:
+            if item_id:
                 item.Name = updateName
                 item.Comment = updateComment
                 item.Middle = updateMiddle
