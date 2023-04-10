@@ -18,7 +18,8 @@ import base64
 from io import BytesIO
 from PIL import Image
 
-model =  torch.hub.load('yolov5','custom', path='yolov5/runs/train/exp/weights/best.pt', force_reload=True, source='local');
+model = torch.hub.load(
+    'yolov5', 'custom', path='yolov5/runs/train/exp/weights/best.pt', force_reload=True, source='local')
 
 
 class TrainingList(ListAPIView):
@@ -28,7 +29,6 @@ class TrainingList(ListAPIView):
     @csrf_exempt
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
-    
 
     def post(self, request, *args, **kwargs):
         if request.method == 'POST':
@@ -49,7 +49,6 @@ class TrainingList(ListAPIView):
                 ed = 1
             elif frame_type == 'Missed Ball':
                 mi = 1
-        
 
             if 'Frame' in request.FILES:
                 im_bytes = request.FILES['Frame'].read()
@@ -60,7 +59,8 @@ class TrainingList(ListAPIView):
                 image.save(filename_img)
                 results = model(filename_img, '../runs')
                 print("result is :"+str(results))
-                results.save()
+                # results.save()
+                results.my_saver()
                 trainingData = TrainingData(Name=training_data_name, Frame=filename_img, Comment=training_data_comment,
                                             Middle=md, Edge=ed, Missed=mi)
                 trainingData.save()
@@ -78,7 +78,8 @@ class TrainingList(ListAPIView):
                 image.save(filename_vide_img)
                 results = model(filename_vide_img)
                 print("result is :"+str(results))
-                results.save()
+                # results.save()
+                results.my_saver()
                 frame_data = TrainingData(Name=frame_name,
                                           Comment=frame_comment, Frame=filename_vide_img, Middle=md, Edge=ed, Missed=mi)
                 frame_data.save()
@@ -117,4 +118,3 @@ class TrainingList(ListAPIView):
                 return JsonResponse({'message': 'Data updated successfully'})
             else:
                 return JsonResponse({'error': 'Please provide a student name'})
-
