@@ -2,11 +2,12 @@ import React, { useRef, useState } from "react";
 import axios from "axios";
 // import myVideo from "../../assets/video.mp4";
 // import Button from "react-bootstrap/Button";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function VideoCapture({ fileData, source }) {
   const [whichDiv, setWhichDiv] = useState(0);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const formFrameRef = useRef(null);
@@ -47,7 +48,7 @@ function VideoCapture({ fileData, source }) {
           setWhichDiv(0);
           console.log("send data: " + data);
           alert("Frame data created successfully!");
-          navigate("/DisplayFramesData");
+          // navigate("/DisplayFramesData");
         });
     } catch (error) {
       console.error(error);
@@ -66,14 +67,21 @@ function VideoCapture({ fileData, source }) {
             >
               <h1>Better Solutions For Your Cricket Training</h1>
               <h2>
-                We are team of talented designers making websites with
-                differents tools....
+                detect whether a cricket ball has been hit by a bat or not.
               </h2>
               <div className="d-flex justify-content-center justify-content-lg-start">
+                <Link to="/DisplayFramesData">
+                  <button
+                    type="button"
+                    className="btn btn-outline-secondary btn-lg m-1"
+                  >
+                    Display Capture
+                  </button>
+                </Link>
                 <button
                   onClick={captureFrame}
                   type="button"
-                  className="btn btn-outline-success btn-lg"
+                  className="btn btn-outline-success btn-lg m-1"
                 >
                   Capture Frame
                 </button>

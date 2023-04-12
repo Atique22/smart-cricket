@@ -66,12 +66,12 @@ function DashboardBody() {
                     cricket ball has been hit by a bat or not.
                   </h2>
                   <div className="d-flex justify-content-center justify-content-lg-start">
-                    <Link to="" className="m-3">
+                    <Link to="/DisplayFramesData" className="m-3">
                       <button
                         type="button"
                         className="btn btn-outline-secondary btn-lg"
                       >
-                        Watch Video
+                        Display Capture
                       </button>
                     </Link>
                     <Link to="" className="m-3">
