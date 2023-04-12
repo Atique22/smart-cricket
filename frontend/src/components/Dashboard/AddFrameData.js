@@ -16,6 +16,7 @@ export default function AddFrameData() {
       .post("http://127.0.0.1:8000/training/", formData)
       .then((response) => {
         console.log("Success:", response.data);
+        window.location.reload();
       })
       .catch((error) => {
         console.log("Error is:", error);

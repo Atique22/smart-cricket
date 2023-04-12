@@ -85,8 +85,12 @@ function VideoCapture({ fileData, source }) {
               data-aos-delay="200"
             >
               <div className="row">
-                <div className="h-200 d-flex align-items-center justify-content-center">
-                  <video controls ref={videoRef}>
+                <div className="h-100 d-flex align-items-center justify-content-center">
+                  <video
+                    controls
+                    ref={videoRef}
+                    style={{ width: "800px", height: "400px" }}
+                  >
                     <source src={source} type="video/mp4" />
                   </video>
                 </div>
@@ -104,7 +108,10 @@ function VideoCapture({ fileData, source }) {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <canvas ref={canvasRef} />
+              <canvas
+                ref={canvasRef}
+                style={{ width: "600px", height: "360px" }}
+              />
             </div>
             <div
               className="col-lg-5 order-0 order-lg-2 "
@@ -167,7 +174,6 @@ function VideoCapture({ fileData, source }) {
           </div>
         </div>
       </section>
-      
     </div>
   );
 }
