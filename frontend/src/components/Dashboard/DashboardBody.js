@@ -62,8 +62,8 @@ function DashboardBody() {
                 >
                   <h1>Better Solutions For Your Cricket Training</h1>
                   <h2>
-                    We are team of talented designers making websites with
-                    differents tools....
+                    We offer a unique tool that can help you detect whether a
+                    cricket ball has been hit by a bat or not.
                   </h2>
                   <div className="d-flex justify-content-center justify-content-lg-start">
                     <Link to="" className="m-3">

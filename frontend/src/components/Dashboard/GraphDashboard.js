@@ -27,8 +27,9 @@ const GraphDashboard = (props) => {
               >
                 <h1>Better Solutions For Your Cricket Training</h1>
                 <h2>
-                  We are team of talented designers making websites with
-                  differents tools....
+                  Our state-of-the-art technology can accurately determine if
+                  the ball has been hit, missed or if there has been a middle
+                  edge.
                 </h2>
                 <div className="d-flex justify-content-center justify-content-lg-start">
                   <button
