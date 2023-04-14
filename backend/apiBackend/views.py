@@ -10,6 +10,7 @@ import json
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from django.http import HttpResponse
+from rest_framework.response import Response
 import requests
 import os
 import torch
@@ -17,6 +18,26 @@ import datetime
 import base64
 from io import BytesIO
 from PIL import Image
+from django.core.paginator import Paginator
+
+import boto3
+# Set up an S3 client
+# s3 = boto3.client('s3')
+s3 = boto3.client(
+    's3',
+    aws_access_key_id='AKIAWRRRLNCH36OE4C6C',
+    aws_secret_access_key='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',
+    region_name='us-east-1'  # US East (N. Virginia) us-east-1
+)
+
+
+def get_image(request, image_key):
+    s3 = boto3.resource('s3')
+    obj = s3.Object('YOUR_BUCKET_NAME', image_key)
+    image_content = obj.get()['Body'].read()
+    response = HttpResponse(image_content, content_type=obj.content_type)
+    return response
+
 
 model = torch.hub.load(
     'yolov5', 'custom', path='yolov5/runs/train/exp/weights/best.pt', force_reload=True, source='local')
@@ -25,6 +46,14 @@ model = torch.hub.load(
 class TrainingList(ListAPIView):
     queryset = TrainingData.objects.all()
     serializer_class = TrainingDataSerializer
+
+    # def get(self, request):
+    #     queryset = self.get_queryset()
+    #     paginator = Paginator(queryset, 5)  # Show 2 contacts per page.
+    #     page_number = request.GET.get('page')
+    #     page_obj = paginator.get_page(page_number)
+    #     serializer = self.serializer_class(page_obj, many=True)
+    #     return Response(serializer.data)
 
     @csrf_exempt
     def dispatch(self, *args, **kwargs):
@@ -56,11 +85,16 @@ class TrainingList(ListAPIView):
                 filename_img = f'frame_{timestamp}.jpg'
                 im_file = BytesIO(im_bytes)
                 image = Image.open(im_file)
-                image.save(filename_img)
+                image.filename = filename_img
                 results = model(filename_img)
                 print("result is :"+str(results))
                 # results.save()
                 results.my_saver()
+                # Upload image to S3 bucket
+                bucket_name = 'fyp-aws'
+                with open(filename_img, 'rb') as f:
+                    s3.upload_fileobj(f, bucket_name, filename_img)
+
                 trainingData = TrainingData(Name=training_data_name, Frame=filename_img, Comment=training_data_comment,
                                             Middle=md, Edge=ed, Missed=mi)
                 trainingData.save()
@@ -75,11 +109,20 @@ class TrainingList(ListAPIView):
                 timestamp = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
                 filename_vide_img = f'frame_{timestamp}.jpg'
                 # save the image to a file with the new filename
-                image.save(filename_vide_img)
-                results = model(filename_vide_img)
-                print("result is :"+str(results))
-                # results.save()
+                image.filename = filename_vide_img
+                results = model(image)
                 results.my_saver()
+                print("result is :"+str(results))
+                # # Upload image to S3 bucket
+                # # get the absolute file path of the current working directory
+                # abs_dir_path = os.path.abspath(os.getcwd())
+                # # concatenate the directory path and filename to create an absolute file path
+                # abs_file_path = os.path.join(abs_dir_path, filename_vide_img)
+                # # Upload image to S3 bucket
+                # # bucket_name = 'fyp-aws'
+                # # with open(abs_file_path, 'rb') as f:
+                # #     s3.upload_fileobj(f, bucket_name, filename_vide_img)
+
                 frame_data = TrainingData(Name=frame_name,
                                           Comment=frame_comment, Frame=filename_vide_img, Middle=md, Edge=ed, Missed=mi)
                 frame_data.save()
