@@ -2,6 +2,9 @@
 """
 Common modules
 """
+# import boto3
+# from pathlib import Path
+# import os
 
 import ast
 import contextlib
@@ -31,6 +34,13 @@ from utils.general import (LOGGER, ROOT, Profile, check_requirements, check_suff
                            xyxy2xywh, yaml_load)
 from utils.plots import Annotator, colors, save_one_box
 from utils.torch_utils import copy_attr, smart_inference_mode
+
+# s3 = boto3.client(
+#     's3',
+#     aws_access_key_id='AKIAWRRRLNCH36OE4C6C',
+#     aws_secret_access_key='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',
+#     region_name='us-east-1'  # US East (N. Virginia) us-east-1
+# )
 
 
 def autopad(k, p=None, d=1):  # kernel, padding, dilation
@@ -796,6 +806,33 @@ class Detections:
 
     def my_saver(self, labels=True, save_dir='runs/detect/exp'):
         self._run(save=True, labels=labels, save_dir=Path(save_dir))
+        
+    # def my_saver(self, labels=True, save_dir='runs/detect/exp', bucket_name='my-bucket'):
+    #      # Set AWS access key and secret key as environment variables
+    #     os.environ['AWS_ACCESS_KEY_ID'] = 'AKIAWRRRLNCH36OE4C6C'
+    #     os.environ['AWS_SECRET_ACCESS_KEY'] = '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'
+    
+    #     # Call _run function with save flag set to True and labels and save_dir arguments
+    #     self._run(save=True, labels=labels, save_dir=Path(save_dir))
+
+    #     # Get list of all files in the save directory
+    #     files_to_upload = list(Path(save_dir).glob('*'))
+
+    #     # Create a new S3 client
+    #     s3 = boto3.client('s3')
+
+    #     # Loop through each file and upload it to the S3 bucket
+    #     for file_path in files_to_upload:
+    #         # Construct the S3 object key using the relative file path
+    #         object_key = str(file_path.relative_to(save_dir))
+
+    #         # Upload the file to S3
+    #         with open(file_path, 'rb') as f:
+    #             s3.upload_fileobj(f, bucket_name, object_key)
+
+    #         # Optional: Delete the local file after it has been uploaded to S3
+    #         file_path.unlink()
+        
 
     def crop(self, save=True, save_dir='runs/detect/exp', exist_ok=False):
         save_dir = increment_path(save_dir, exist_ok, mkdir=True) if save else None
