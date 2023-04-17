@@ -73,11 +73,11 @@ class TrainingList(ListAPIView):
                 print("result is :"+str(results))
                 # results.save()
                 results.my_saver()
-                
+
                 # bucket_name = 'fyp-aws'
                 # with open('runs/detect/exp/'+filename_img, 'rb') as f:
                 #     s3.upload_fileobj(f, bucket_name, 'runs/detect/exp/'+filename_img)
-                    
+
                 trainingData = TrainingData(Name=training_data_name, Frame=filename_img, Comment=training_data_comment,
                                             Middle=md, Edge=ed, Missed=mi)
                 trainingData.save()
@@ -98,11 +98,11 @@ class TrainingList(ListAPIView):
                 print("result is :"+str(results))
                 # results.save()
                 results.my_saver()
-                
+
                 # bucket_name = 'fyp-aws'
                 # with open('runs/detect/exp/'+filename_vide_img, 'rb') as f:
                 #     s3.upload_fileobj(f, bucket_name, 'runs/detect/exp/'+filename_vide_img)
-                    
+
                 frame_data = TrainingData(Name=frame_name,
                                           Comment=frame_comment, Frame=filename_vide_img, Middle=md, Edge=ed, Missed=mi)
                 frame_data.save()
