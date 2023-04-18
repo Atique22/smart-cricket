@@ -50,7 +50,7 @@ const GraphDashboard = (props) => {
                 </div>
               </div>
               <div
-                className="col-lg-6 order-1 order-lg-2 hero-img"
+                className="col-lg-6 order-1 order-lg-2 hero-img mb-5"
                 data-aos="zoom-in"
                 data-aos-delay="200"
               >
