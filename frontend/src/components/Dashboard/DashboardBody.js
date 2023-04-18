@@ -92,7 +92,7 @@ function DashboardBody() {
                 >
                   <div className="row h-100 m-5">
                     {form === false ? (
-                      <div className="h-100 d-flex align-items-center justify-content-center">
+                      <div className="h-100 d-flex mb-5 align-items-center justify-content-center">
                         <button
                           className="btn btn-outline-dark border-0"
                           onClick={handleShow}

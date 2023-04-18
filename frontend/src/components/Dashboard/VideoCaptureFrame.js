@@ -93,7 +93,7 @@ function VideoCapture({ fileData, source }) {
               data-aos-delay="200"
             >
               <div className="row">
-                <div className="h-100 d-flex align-items-center justify-content-center">
+                <div className="h-100 d-flex mb-5 align-items-center justify-content-center">
                   <video
                     controls
                     ref={videoRef}
@@ -108,8 +108,8 @@ function VideoCapture({ fileData, source }) {
         </div>
       </section>
 
-      <section id="hero-frame" className="d-flex align-items-center">
-        <div className="container">
+      <section id="hero-frame" className="d-flex py-15 align-items-center">
+        <div className="container mt-5">
           <div className="row">
             <div
               className="col-lg-7 d-flex flex-column justify-content-center pt-0 pt-lg-0 order-2 order-lg-1"

@@ -37,7 +37,7 @@ nav ul li {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: 80vh;
+  /* height: 80vh; */
   background: #202124;
 }
 
@@ -46,8 +46,9 @@ nav ul li {
 }
 #hero-frame {
   width: 100%;
-  height: 50vh;
+  /* height: 50vh; */
   background: #404142;
+  padding: 10px;
 }
 #hero-display-table{
   width: 100%;
