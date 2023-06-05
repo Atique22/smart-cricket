@@ -2,25 +2,25 @@
 
 
 
--frontend
+## frontend
 ```
  cd frontend
  npm install
  npm start
 ```
 
--backend
+## backend
 ```
  cd backend
  pip install -r requirements.txt
  python manage.py runserver
 ```
--ML
+## CV/ML
 ```
 cd yolov5
 pip install -r requirements.txt
 ```
--Demo Link
+## Demo Link
 ```
 https://fypml.studio/
 ```
